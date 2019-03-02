@@ -10,6 +10,7 @@
 		228D6EC2222A51E5009F8826 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6EC1222A51E5009F8826 /* Cell.swift */; };
 		228D6EC5222A59EF009F8826 /* NSLayoutConstraintsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6EC4222A59EF009F8826 /* NSLayoutConstraintsExtensions.swift */; };
 		228D6EC7222A5F25009F8826 /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6EC6222A5F25009F8826 /* PictureCell.swift */; };
+		228D6ECA222A6A90009F8826 /* LincolnLawsServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6EC9222A6A90009F8826 /* LincolnLawsServer.swift */; };
 		22F62BF0222A3D62001D192F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F62BEF222A3D62001D192F /* AppDelegate.swift */; };
 		22F62BF2222A3D62001D192F /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F62BF1222A3D62001D192F /* CardViewController.swift */; };
 		22F62BF5222A3D62001D192F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F62BF3222A3D62001D192F /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 		228D6EC1222A51E5009F8826 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		228D6EC4222A59EF009F8826 /* NSLayoutConstraintsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintsExtensions.swift; sourceTree = "<group>"; };
 		228D6EC6222A5F25009F8826 /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
+		228D6EC9222A6A90009F8826 /* LincolnLawsServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LincolnLawsServer.swift; sourceTree = "<group>"; };
 		22F62BEC222A3D62001D192F /* Lincoln Laws.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lincoln Laws.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F62BEF222A3D62001D192F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22F62BF1222A3D62001D192F /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,14 @@
 			path = ClingConstraintsHelpers;
 			sourceTree = "<group>";
 		};
+		228D6EC8222A6A7A009F8826 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				228D6EC9222A6A90009F8826 /* LincolnLawsServer.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
 		22F62BE3222A3D62001D192F = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +85,7 @@
 		22F62BEE222A3D62001D192F /* Lincoln Laws */ = {
 			isa = PBXGroup;
 			children = (
+				228D6EC8222A6A7A009F8826 /* Server */,
 				228D6EC3222A59DE009F8826 /* ClingConstraintsHelpers */,
 				22F62C01222A510C001D192F /* Views */,
 				22F62BEF222A3D62001D192F /* AppDelegate.swift */,
@@ -234,6 +245,7 @@
 				228D6EC7222A5F25009F8826 /* PictureCell.swift in Sources */,
 				22F62BF0222A3D62001D192F /* AppDelegate.swift in Sources */,
 				228D6EC2222A51E5009F8826 /* Cell.swift in Sources */,
+				228D6ECA222A6A90009F8826 /* LincolnLawsServer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
