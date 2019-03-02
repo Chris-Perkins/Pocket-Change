@@ -80,8 +80,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lDP-2p-ZEu" userLabel="card sim view">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="425.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTX-PO-vDy">
-                                                        <rect key="frame" x="16" y="88" width="343" height="227"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WOAHWAOWAHOWAHOWHOWAHOWHAO" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTX-PO-vDy">
+                                                        <rect key="frame" x="16" y="50" width="343" height="190"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -91,8 +91,9 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="Title label"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqO-uA-cWf">
-                                                        <rect key="frame" x="16" y="331" width="343" height="25.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqO-uA-cWf">
+                                                        <rect key="frame" x="16" y="256" width="343" height="100.5"/>
+                                                        <string key="text">Dynamically-sized, and dynamically scaled. What a beautiful label. I can think of three words to describe this label: Cool and nice.</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -124,7 +125,7 @@
                                                 <color key="backgroundColor" red="0.1450980392" green="0.2274509804" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="uth-Uj-TgQ" firstAttribute="top" secondItem="fqO-uA-cWf" secondAttribute="bottom" constant="16" id="AGj-NX-OqG"/>
-                                                    <constraint firstItem="mTX-PO-vDy" firstAttribute="top" secondItem="lDP-2p-ZEu" secondAttribute="top" constant="88" id="DSr-ob-bhA"/>
+                                                    <constraint firstItem="mTX-PO-vDy" firstAttribute="top" secondItem="lDP-2p-ZEu" secondAttribute="top" constant="50" id="DSr-ob-bhA"/>
                                                     <constraint firstAttribute="trailing" secondItem="uth-Uj-TgQ" secondAttribute="trailing" constant="8" id="K8V-tI-PXo"/>
                                                     <constraint firstAttribute="bottom" secondItem="uth-Uj-TgQ" secondAttribute="bottom" constant="8" id="KPY-kK-37X"/>
                                                     <constraint firstItem="fqO-uA-cWf" firstAttribute="top" secondItem="mTX-PO-vDy" secondAttribute="bottom" constant="16" id="Q9g-BH-NzA"/>
@@ -170,11 +171,11 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqH-5Q-1Gt">
-                                <rect key="frame" x="319" y="28" width="48" height="48"/>
+                                <rect key="frame" x="331" y="28" width="36" height="36"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="7Lc-9Y-PKE"/>
-                                    <constraint firstAttribute="width" constant="48" id="gZs-HA-uBa"/>
+                                    <constraint firstAttribute="height" constant="36" id="7Lc-9Y-PKE"/>
+                                    <constraint firstAttribute="width" constant="36" id="gZs-HA-uBa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="⨯">
@@ -182,7 +183,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="24"/>
+                                        <integer key="value" value="18"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColor">
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -249,7 +250,7 @@
                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
-                                <color key="value" red="0.35686274509803922" green="0.52941176470588236" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="value" red="0.61960784313725492" green="0.72156862745098038" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
