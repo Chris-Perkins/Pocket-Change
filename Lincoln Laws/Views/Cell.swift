@@ -21,12 +21,15 @@ final class Cell: MagazineLayoutCollectionViewCell {
     public let label: UILabel
     // Classification images go here
     public let billClassificationCollectionView: UICollectionView
+    public let card: MDCCard
 
     private let classificationImageSquareDimension: CGFloat = 32
+
 
     override init(frame: CGRect) {
         label = UILabel(frame: .zero)
         titleLabel = UILabel(frame: .zero)
+        card = MDCCard(frame: .zero)
 
         let billClassViewLayout = UICollectionViewFlowLayout()
         billClassViewLayout.itemSize = CGSize(width: classificationImageSquareDimension,
@@ -49,7 +52,6 @@ final class Cell: MagazineLayoutCollectionViewCell {
         label.font = UIFont.systemFont(ofSize: 17)
         label.numberOfLines = 0
 
-        let card = MDCCard(frame: .zero)
         card.backgroundColor = UIColor(red: 37.0 / 255.0, green: 58.0 / 255.0 , blue: 90.0 / 255.0, alpha: 1)
         //card.tintColor = UIColor(red: 103, green: 86, blue: 109, alpha: 1)
         contentView.addSubview(card)

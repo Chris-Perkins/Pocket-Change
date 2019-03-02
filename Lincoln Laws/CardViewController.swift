@@ -6,10 +6,13 @@
 //  Copyright © 2019 Christopher Perkins. All rights reserved.
 //
 
+import Hero
 import MagazineLayout
 import UIKit
 
 class CardViewController: UIViewController {
+
+    private var previouslySelectedCell: UIView?
 
     @IBOutlet weak var cardCollectionView: UICollectionView! {
         didSet {
@@ -17,6 +20,13 @@ class CardViewController: UIViewController {
             cardCollectionView.delegate = self
             cardCollectionView.register(Cell.self, forCellWithReuseIdentifier: Cell.description())
         }
+    }
+
+    @objc public func segue(for cell: UICollectionViewCell) {
+        previouslySelectedCell?.hero.id = nil
+        cell.hero.id = "card"
+        performSegue(withIdentifier: "cell", sender: self)
+        previouslySelectedCell = cell
     }
 }
 
@@ -36,6 +46,7 @@ extension CardViewController: UICollectionViewDataSource {
             cell.titleLabel.text = "\(i)"
             cell.label.text = cell.label.text == nil ? "LINE 1" : cell.label.text! + "\n YO"
         }
+        cell.card.addTarget(self, action: #selector(segue(for:)), for: .touchUpInside)
         return cell
     }
 }

@@ -29,7 +29,7 @@
         <!--Card View Controller-->
         <scene sceneID="iCN-3N-5Ah">
             <objects>
-                <viewController id="FCK-bi-PT5" customClass="CardViewController" customModule="Lincoln_Laws" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController providesPresentationContextTransitionStyle="YES" id="FCK-bi-PT5" customClass="CardViewController" customModule="Lincoln_Laws" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P6H-KI-drB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,15 +49,119 @@
                             <constraint firstItem="y2I-mK-D1T" firstAttribute="top" secondItem="NPe-6u-uWh" secondAttribute="top" constant="8" id="Sed-p4-GaK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NPe-6u-uWh"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="bg"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="recents" id="jam-Hu-oCj"/>
                     <connections>
                         <outlet property="cardCollectionView" destination="y2I-mK-D1T" id="vu4-IU-plj"/>
+                        <segue destination="Cq6-QP-smf" kind="show" identifier="cell" id="Ici-We-A0P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v9v-do-pmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-455.19999999999999" y="-546.47676161919048"/>
+        </scene>
+        <!--Card Detail View Controller-->
+        <scene sceneID="unM-zc-7UV">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="Cq6-QP-smf" customClass="CardDetailViewController" customModule="Lincoln_Laws" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z76-R5-ecX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="noP-Ov-Szn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="T2X-BM-bvg">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1017"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lDP-2p-ZEu" userLabel="card sim view">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                                                <color key="backgroundColor" red="0.1450980392" green="0.2274509804" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="350" id="twJ-BF-65c"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="card"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cru-3l-9By">
+                                                <rect key="frame" x="0.0" y="350" width="375" height="667"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="T2X-BM-bvg" firstAttribute="leading" secondItem="noP-Ov-Szn" secondAttribute="leading" id="Ltt-89-a9b"/>
+                                    <constraint firstItem="T2X-BM-bvg" firstAttribute="width" secondItem="noP-Ov-Szn" secondAttribute="width" id="Slz-rS-cB8"/>
+                                    <constraint firstAttribute="bottom" secondItem="T2X-BM-bvg" secondAttribute="bottom" id="WVR-CS-KWV"/>
+                                    <constraint firstAttribute="trailing" secondItem="T2X-BM-bvg" secondAttribute="trailing" id="iCa-uL-XFx"/>
+                                    <constraint firstItem="T2X-BM-bvg" firstAttribute="top" secondItem="noP-Ov-Szn" secondAttribute="top" id="j2y-fM-rVF"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqH-5Q-1Gt">
+                                <rect key="frame" x="319" y="28" width="48" height="48"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="7Lc-9Y-PKE"/>
+                                    <constraint firstAttribute="width" constant="48" id="gZs-HA-uBa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="⨯">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="1" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="hero_dismissViewController" destination="Cq6-QP-smf" eventType="touchUpInside" id="sg8-To-kW9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cru-3l-9By" firstAttribute="height" secondItem="Z76-R5-ecX" secondAttribute="height" id="Bm6-e8-E9Z"/>
+                            <constraint firstItem="noP-Ov-Szn" firstAttribute="leading" secondItem="ryS-fa-TPf" secondAttribute="leading" id="F7V-HO-Iw6"/>
+                            <constraint firstItem="noP-Ov-Szn" firstAttribute="top" secondItem="Z76-R5-ecX" secondAttribute="top" id="LTo-CQ-J0D"/>
+                            <constraint firstItem="XqH-5Q-1Gt" firstAttribute="top" secondItem="ryS-fa-TPf" secondAttribute="top" constant="8" id="dPs-MO-YKj"/>
+                            <constraint firstItem="ryS-fa-TPf" firstAttribute="trailing" secondItem="XqH-5Q-1Gt" secondAttribute="trailing" constant="8" id="fWE-PG-Svz"/>
+                            <constraint firstItem="ryS-fa-TPf" firstAttribute="bottom" secondItem="noP-Ov-Szn" secondAttribute="bottom" id="r4R-o1-4aQ"/>
+                            <constraint firstItem="ryS-fa-TPf" firstAttribute="trailing" secondItem="noP-Ov-Szn" secondAttribute="trailing" id="zy0-du-NaE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ryS-fa-TPf"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="bg"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="closeButton" destination="XqH-5Q-1Gt" id="cLh-Hc-Loa"/>
+                        <outlet property="scrollView" destination="noP-Ov-Szn" id="jd0-Nk-5m5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RiM-He-yg8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="312.80000000000001" y="-546.47676161919048"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="qai-Wv-Ofz">
