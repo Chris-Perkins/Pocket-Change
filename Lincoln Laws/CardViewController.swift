@@ -10,9 +10,21 @@ import Hero
 import MagazineLayout
 import UIKit
 
+// BEWARE HACKATHON CODE :O
+
 class CardViewController: UIViewController {
 
-    private var previouslySelectedCell: UIView?
+    private var previouslySelectedCell: CellCard? {
+        willSet {
+            previouslySelectedCell?.hero.id = nil
+            previouslySelectedCell?.titleLabel.hero.id = nil
+            previouslySelectedCell?.label.hero.id = nil
+
+            newValue?.hero.id = "card"
+            newValue?.titleLabel.hero.id = "Title label"
+            newValue?.label.hero.id = "Smaller boi label"
+        }
+    }
 
     @IBOutlet weak var cardCollectionView: UICollectionView! {
         didSet {
@@ -22,9 +34,7 @@ class CardViewController: UIViewController {
         }
     }
 
-    @objc public func segue(for cell: UICollectionViewCell) {
-        previouslySelectedCell?.hero.id = nil
-        cell.hero.id = "card"
+    @objc public func segue(for cell: CellCard) {
         performSegue(withIdentifier: "cell", sender: self)
         previouslySelectedCell = cell
     }
@@ -43,8 +53,8 @@ extension CardViewController: UICollectionViewDataSource {
                                cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.description(), for: indexPath) as! Cell
         for i in 0...indexPath.row {
-            cell.titleLabel.text = "\(i)"
-            cell.label.text = cell.label.text == nil ? "LINE 1" : cell.label.text! + "\n YO"
+            cell.card.titleLabel.text = "\(i)"
+            cell.card.label.text = cell.card.label.text == nil ? "LINE 1" : cell.card.label.text! + "\n YO"
         }
         cell.card.addTarget(self, action: #selector(segue(for:)), for: .touchUpInside)
         return cell
