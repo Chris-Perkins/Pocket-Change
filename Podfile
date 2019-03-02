@@ -7,4 +7,6 @@ target 'Lincoln Laws' do
 
   # Pods for Lincoln Laws
 
+  pod 'MaterialComponents/Cards'
+
 end

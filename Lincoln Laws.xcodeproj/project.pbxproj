@@ -12,6 +12,7 @@
 		22F62BF5222A3D62001D192F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F62BF3222A3D62001D192F /* Main.storyboard */; };
 		22F62BF7222A3D62001D192F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F62BF6222A3D62001D192F /* Assets.xcassets */; };
 		22F62BFA222A3D62001D192F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F62BF8222A3D62001D192F /* LaunchScreen.storyboard */; };
+		E5BE6D0052E6518B6C24EF0A /* Pods_Lincoln_Laws.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE98C3B4632699E270270C6E /* Pods_Lincoln_Laws.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		22F62BF6222A3D62001D192F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22F62BF9222A3D62001D192F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22F62BFB222A3D62001D192F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40949314992AC1637BAFE9D0 /* Pods-Lincoln Laws.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lincoln Laws.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lincoln Laws/Pods-Lincoln Laws.release.xcconfig"; sourceTree = "<group>"; };
+		714863AFA0A1C04F74EA6235 /* Pods-Lincoln Laws.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lincoln Laws.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lincoln Laws/Pods-Lincoln Laws.debug.xcconfig"; sourceTree = "<group>"; };
+		EE98C3B4632699E270270C6E /* Pods_Lincoln_Laws.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lincoln_Laws.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5BE6D0052E6518B6C24EF0A /* Pods_Lincoln_Laws.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				22F62BEE222A3D62001D192F /* Lincoln Laws */,
 				22F62BED222A3D62001D192F /* Products */,
+				F708A928D25A3E365D944AB4 /* Pods */,
+				53B3FE7E7997C6DF6188C238 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = "Lincoln Laws";
 			sourceTree = "<group>";
 		};
+		53B3FE7E7997C6DF6188C238 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE98C3B4632699E270270C6E /* Pods_Lincoln_Laws.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F708A928D25A3E365D944AB4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				714863AFA0A1C04F74EA6235 /* Pods-Lincoln Laws.debug.xcconfig */,
+				40949314992AC1637BAFE9D0 /* Pods-Lincoln Laws.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22F62BFE222A3D62001D192F /* Build configuration list for PBXNativeTarget "Lincoln Laws" */;
 			buildPhases = (
+				30AE1FC5775090D69BD1005D /* [CP] Check Pods Manifest.lock */,
 				22F62BE8222A3D62001D192F /* Sources */,
 				22F62BE9222A3D62001D192F /* Frameworks */,
 				22F62BEA222A3D62001D192F /* Resources */,
+				912FF1C12C87C364034D09A0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		30AE1FC5775090D69BD1005D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Lincoln Laws-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		912FF1C12C87C364034D09A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Lincoln Laws/Pods-Lincoln Laws-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lincoln Laws/Pods-Lincoln Laws-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		22F62BE8222A3D62001D192F /* Sources */ = {
@@ -280,6 +345,7 @@
 		};
 		22F62BFF222A3D62001D192F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 714863AFA0A1C04F74EA6235 /* Pods-Lincoln Laws.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +364,7 @@
 		};
 		22F62C00222A3D62001D192F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40949314992AC1637BAFE9D0 /* Pods-Lincoln Laws.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
