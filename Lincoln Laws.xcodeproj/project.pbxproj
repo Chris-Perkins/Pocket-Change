@@ -13,6 +13,7 @@
 		228D6ECA222A6A90009F8826 /* LincolnLawsServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6EC9222A6A90009F8826 /* LincolnLawsServer.swift */; };
 		228D6ECC222ACBDD009F8826 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6ECB222ACBDD009F8826 /* CardDetailViewController.swift */; };
 		228D6ECE222AD534009F8826 /* CellCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6ECD222AD534009F8826 /* CellCard.swift */; };
+		228D6ED7222ADFD5009F8826 /* dollar.json in Resources */ = {isa = PBXBuildFile; fileRef = 228D6ED6222ADFD5009F8826 /* dollar.json */; };
 		22F62BF0222A3D62001D192F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F62BEF222A3D62001D192F /* AppDelegate.swift */; };
 		22F62BF2222A3D62001D192F /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F62BF1222A3D62001D192F /* CardViewController.swift */; };
 		22F62BF5222A3D62001D192F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F62BF3222A3D62001D192F /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		228D6EC9222A6A90009F8826 /* LincolnLawsServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LincolnLawsServer.swift; sourceTree = "<group>"; };
 		228D6ECB222ACBDD009F8826 /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
 		228D6ECD222AD534009F8826 /* CellCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCard.swift; sourceTree = "<group>"; };
+		228D6ED6222ADFD5009F8826 /* dollar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dollar.json; sourceTree = "<group>"; };
 		22F62BEC222A3D62001D192F /* Lincoln Laws.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lincoln Laws.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F62BEF222A3D62001D192F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22F62BF1222A3D62001D192F /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,14 @@
 			path = Server;
 			sourceTree = "<group>";
 		};
+		228D6ECF222ADCD0009F8826 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				228D6ED6222ADFD5009F8826 /* dollar.json */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		22F62BE3222A3D62001D192F = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +99,7 @@
 		22F62BEE222A3D62001D192F /* Lincoln Laws */ = {
 			isa = PBXGroup;
 			children = (
+				228D6ECF222ADCD0009F8826 /* Images */,
 				228D6EC8222A6A7A009F8826 /* Server */,
 				228D6EC3222A59DE009F8826 /* ClingConstraintsHelpers */,
 				22F62C01222A510C001D192F /* Views */,
@@ -193,6 +204,7 @@
 				22F62BFA222A3D62001D192F /* LaunchScreen.storyboard in Resources */,
 				22F62BF7222A3D62001D192F /* Assets.xcassets in Resources */,
 				22F62BF5222A3D62001D192F /* Main.storyboard in Resources */,
+				228D6ED7222ADFD5009F8826 /* dollar.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +240,7 @@
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/MagazineLayout/MagazineLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -235,6 +248,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MagazineLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

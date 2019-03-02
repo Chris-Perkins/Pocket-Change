@@ -10,5 +10,6 @@ target 'Lincoln Laws' do
   pod 'MaterialComponents/Cards'
   pod 'ClingConstraints'
   pod 'Hero'
+  pod 'lottie-ios'
 
 end

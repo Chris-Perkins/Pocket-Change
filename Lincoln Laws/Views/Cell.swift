@@ -8,8 +8,8 @@
 
 import ClingConstraints
 import MagazineLayout
-import UIKit
 import MaterialComponents
+import UIKit
 
 final class Cell: MagazineLayoutCollectionViewCell {
 
@@ -64,4 +64,10 @@ extension Cell: UICollectionViewDataSource {
 }
 
 extension Cell: UICollectionViewDelegate {
+}
+
+extension Cell: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: card.classificationImageSquareDimension, height: card.classificationImageSquareDimension)
+    }
 }

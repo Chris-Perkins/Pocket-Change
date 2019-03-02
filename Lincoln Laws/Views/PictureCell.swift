@@ -7,23 +7,24 @@
 //
 
 import ClingConstraints
+import Lottie
 import UIKit
 
 public class PictureCell: UICollectionViewCell {
 
-    let imageView: UIImageView
+    let lottieView: LOTAnimationView
 
     override public init(frame: CGRect) {
-        imageView = UIImageView(frame: .zero)
-        imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = UIColor.white
+        lottieView = LOTAnimationView(name: "dollar")
 
         super.init(frame: frame)
 
-        imageView.image = UIImage(named: "boi")
+        contentView.addSubview(lottieView)
+        lottieView.copy(.top, .bottom, .left, .right, of: contentView)
 
-        contentView.addSubview(imageView)
-        imageView.copy(.top, .bottom, .left, .right, of: contentView)
+        lottieView.contentMode = .scaleAspectFill
+
+        clipsToBounds = false
     }
 
     required init?(coder aDecoder: NSCoder) {

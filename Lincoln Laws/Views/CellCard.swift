@@ -19,20 +19,19 @@ public class CellCard: MDCCard {
     // Classification images go here
     public let billClassificationCollectionView: UICollectionView
 
-    private let classificationImageSquareDimension: CGFloat = 32
+    public let classificationImageSquareDimension: CGFloat = 32
 
     override public init(frame: CGRect) {
         label = UILabel(frame: .zero)
         titleLabel = UILabel(frame: .zero)
 
         let billClassViewLayout = UICollectionViewFlowLayout()
-        billClassViewLayout.itemSize = CGSize(width: classificationImageSquareDimension,
-                                              height: classificationImageSquareDimension)
 
         billClassificationCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         billClassificationCollectionView.isUserInteractionEnabled = false
         billClassificationCollectionView.register(PictureCell.self,
                                                   forCellWithReuseIdentifier: PictureCell.description())
+        billClassificationCollectionView.clipsToBounds = false
         
         super.init(frame: frame)
 
@@ -53,7 +52,7 @@ public class CellCard: MDCCard {
         label.cling(.top, to: titleLabel, .bottom).withOffset(8)
         label.textColor = UIColor.white
 
-        billClassificationCollectionView.cling(.top, to: label, .bottom).withOffset(8)
+        billClassificationCollectionView.cling(.top, to: label, .bottom).withOffset(16)
         billClassificationCollectionView.copy(.leading, of: self).withOffset(8)
         billClassificationCollectionView.copy(.trailing, of: self).withOffset(-8)
         billClassificationCollectionView.copy(.bottom, of: self).withOffset(-8)
