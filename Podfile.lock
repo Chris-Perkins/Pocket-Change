@@ -1,0 +1,41 @@
+PODS:
+  - ClingConstraints (1.0.2)
+  - MagazineLayout (1.2.1)
+  - MaterialComponents/Cards (77.0.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Icons/ic_check_circle
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Shapes
+  - MaterialComponents/Ink (77.0.0):
+    - MaterialComponents/private/Math
+  - MaterialComponents/private/Icons/Base (77.0.0)
+  - MaterialComponents/private/Icons/ic_check_circle (77.0.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Math (77.0.0)
+  - MaterialComponents/ShadowElevations (77.0.0)
+  - MaterialComponents/ShadowLayer (77.0.0):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Shapes (77.0.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+
+DEPENDENCIES:
+  - ClingConstraints
+  - MagazineLayout (~> 1.2.1)
+  - MaterialComponents/Cards
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ClingConstraints
+    - MagazineLayout
+    - MaterialComponents
+
+SPEC CHECKSUMS:
+  ClingConstraints: db6e34c17384e0f73ed9af3206020cac929ec40c
+  MagazineLayout: cd9cb2174bcf1c349d8286390c7f9716e4ef40b9
+  MaterialComponents: 1dc805d52502bd9d5692c2ffcc8a169c8b65b916
+
+PODFILE CHECKSUM: 11e984a5d4b0731793ae66ba3387b1bd45e6b7d5
+
+COCOAPODS: 1.5.3
