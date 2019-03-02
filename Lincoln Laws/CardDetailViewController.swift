@@ -53,7 +53,7 @@ public class CardDetailViewController: UIViewController {
         didSet {
             closeButton.layer.shadowColor = UIColor.white.cgColor
             closeButton.layer.shadowOffset = CGSize.zero
-            closeButton.layer.shadowRadius = 2
+            closeButton.layer.shadowRadius = 4
             closeButton.layer.shadowOpacity = 1
         }
     }
