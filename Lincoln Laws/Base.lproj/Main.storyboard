@@ -168,14 +168,14 @@
                                                 <rect key="frame" x="0.0" y="425.5" width="375" height="64"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYQ-4X-DTd" userLabel="republicandemocrat image">
-                                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                        <rect key="frame" x="8" y="8" width="48" height="48"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="64" id="P5v-dw-HqG"/>
-                                                            <constraint firstAttribute="width" constant="64" id="YFE-wC-q9b"/>
+                                                            <constraint firstAttribute="height" constant="48" id="P5v-dw-HqG"/>
+                                                            <constraint firstAttribute="width" constant="48" id="YFE-wC-q9b"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sponsoring Party: Republican" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gIg-YH-wLC" userLabel="sponsoring label">
-                                                        <rect key="frame" x="72" y="8" width="295" height="48"/>
+                                                        <rect key="frame" x="72" y="8" width="287" height="48"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -183,13 +183,13 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.1450980392" green="0.2274509804" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstItem="bYQ-4X-DTd" firstAttribute="top" secondItem="TIv-BC-RiO" secondAttribute="top" id="8DI-Gf-80s"/>
-                                                    <constraint firstAttribute="trailing" secondItem="gIg-YH-wLC" secondAttribute="trailing" constant="8" id="BQW-Dz-G28"/>
+                                                    <constraint firstItem="bYQ-4X-DTd" firstAttribute="top" secondItem="TIv-BC-RiO" secondAttribute="top" constant="8" id="8DI-Gf-80s"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gIg-YH-wLC" secondAttribute="trailing" constant="16" id="BQW-Dz-G28"/>
                                                     <constraint firstAttribute="bottom" secondItem="gIg-YH-wLC" secondAttribute="bottom" constant="8" id="eYg-qM-ULI"/>
-                                                    <constraint firstItem="bYQ-4X-DTd" firstAttribute="leading" secondItem="TIv-BC-RiO" secondAttribute="leading" id="jZ2-yb-Oem"/>
+                                                    <constraint firstItem="bYQ-4X-DTd" firstAttribute="leading" secondItem="TIv-BC-RiO" secondAttribute="leading" constant="8" id="jZ2-yb-Oem"/>
                                                     <constraint firstItem="gIg-YH-wLC" firstAttribute="top" secondItem="TIv-BC-RiO" secondAttribute="top" constant="8" id="kAM-WU-cV2"/>
-                                                    <constraint firstItem="gIg-YH-wLC" firstAttribute="leading" secondItem="bYQ-4X-DTd" secondAttribute="trailing" constant="8" id="lV0-tZ-PVs"/>
-                                                    <constraint firstAttribute="bottom" secondItem="bYQ-4X-DTd" secondAttribute="bottom" id="vHy-Kc-sIr"/>
+                                                    <constraint firstItem="gIg-YH-wLC" firstAttribute="leading" secondItem="bYQ-4X-DTd" secondAttribute="trailing" constant="16" id="lV0-tZ-PVs"/>
+                                                    <constraint firstAttribute="bottom" secondItem="bYQ-4X-DTd" secondAttribute="bottom" constant="8" id="vHy-Kc-sIr"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cru-3l-9By" userLabel="description">
