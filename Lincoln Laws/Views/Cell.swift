@@ -55,18 +55,22 @@ final class Cell: MagazineLayoutCollectionViewCell {
 
 extension Cell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 5
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PictureCell.description(), for: indexPath) as! PictureCell
         switch indexPath.row {
         case 0:
-            cell.lottieView.setAnimation(named: "dollar")
+            cell.lottieView.setAnimation(named: "globe")
         case 1:
             cell.lottieView.setAnimation(named: "leaf")
-        default:
+        case 2:
             cell.lottieView.setAnimation(named: "shield")
+        case 3:
+            cell.lottieView.setAnimation(named: "dollar")
+        default:
+            cell.lottieView.setAnimation(named: "house")
         }
         return cell
     }

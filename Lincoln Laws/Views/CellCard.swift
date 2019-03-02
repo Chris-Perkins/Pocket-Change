@@ -25,8 +25,6 @@ public class CellCard: MDCCard {
         label = UILabel(frame: .zero)
         titleLabel = UILabel(frame: .zero)
 
-        let billClassViewLayout = UICollectionViewFlowLayout()
-
         billClassificationCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         billClassificationCollectionView.isUserInteractionEnabled = false
         billClassificationCollectionView.register(PictureCell.self,
