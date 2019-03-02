@@ -15,7 +15,7 @@
 		228D6ECE222AD534009F8826 /* CellCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6ECD222AD534009F8826 /* CellCard.swift */; };
 		228D6ED9222AE2D2009F8826 /* dollar.json in Resources */ = {isa = PBXBuildFile; fileRef = 228D6ED8222AE2D2009F8826 /* dollar.json */; };
 		228D6EDB222AECAD009F8826 /* leaf.json in Resources */ = {isa = PBXBuildFile; fileRef = 228D6EDA222AECAD009F8826 /* leaf.json */; };
-		228D6EDD222AECBD009F8826 /* shield.json in Resources */ = {isa = PBXBuildFile; fileRef = 228D6EDC222AECBD009F8826 /* shield.json */; };
+		228D6EDF222AEE25009F8826 /* shield.json in Resources */ = {isa = PBXBuildFile; fileRef = 228D6EDE222AEE25009F8826 /* shield.json */; };
 		22F62BF0222A3D62001D192F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F62BEF222A3D62001D192F /* AppDelegate.swift */; };
 		22F62BF2222A3D62001D192F /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F62BF1222A3D62001D192F /* CardViewController.swift */; };
 		22F62BF5222A3D62001D192F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F62BF3222A3D62001D192F /* Main.storyboard */; };
@@ -33,7 +33,7 @@
 		228D6ECD222AD534009F8826 /* CellCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCard.swift; sourceTree = "<group>"; };
 		228D6ED8222AE2D2009F8826 /* dollar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dollar.json; sourceTree = "<group>"; };
 		228D6EDA222AECAD009F8826 /* leaf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = leaf.json; sourceTree = "<group>"; };
-		228D6EDC222AECBD009F8826 /* shield.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shield.json; sourceTree = "<group>"; };
+		228D6EDE222AEE25009F8826 /* shield.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shield.json; sourceTree = "<group>"; };
 		22F62BEC222A3D62001D192F /* Lincoln Laws.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lincoln Laws.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F62BEF222A3D62001D192F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22F62BF1222A3D62001D192F /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			children = (
 				228D6ED8222AE2D2009F8826 /* dollar.json */,
 				228D6EDA222AECAD009F8826 /* leaf.json */,
-				228D6EDC222AECBD009F8826 /* shield.json */,
+				228D6EDE222AEE25009F8826 /* shield.json */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -209,8 +209,8 @@
 			files = (
 				228D6ED9222AE2D2009F8826 /* dollar.json in Resources */,
 				22F62BFA222A3D62001D192F /* LaunchScreen.storyboard in Resources */,
-				228D6EDD222AECBD009F8826 /* shield.json in Resources */,
 				22F62BF7222A3D62001D192F /* Assets.xcassets in Resources */,
+				228D6EDF222AEE25009F8826 /* shield.json in Resources */,
 				228D6EDB222AECAD009F8826 /* leaf.json in Resources */,
 				22F62BF5222A3D62001D192F /* Main.storyboard in Resources */,
 			);

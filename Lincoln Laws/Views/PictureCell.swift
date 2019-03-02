@@ -12,7 +12,7 @@ import UIKit
 
 public class PictureCell: UICollectionViewCell {
 
-    let lottieView: LOTAnimationView
+    public let lottieView: LOTAnimationView
 
     override public init(frame: CGRect) {
         lottieView = LOTAnimationView(name: "dollar")

@@ -59,7 +59,16 @@ extension Cell: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: PictureCell.description(), for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PictureCell.description(), for: indexPath) as! PictureCell
+        switch indexPath.row {
+        case 0:
+            cell.lottieView.setAnimation(named: "dollar")
+        case 1:
+            cell.lottieView.setAnimation(named: "leaf")
+        default:
+            cell.lottieView.setAnimation(named: "shield")
+        }
+        return cell
     }
 }
 
