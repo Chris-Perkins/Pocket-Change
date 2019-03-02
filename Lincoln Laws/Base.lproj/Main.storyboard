@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-453" y="119"/>
         </scene>
-        <!--Card View Controller-->
+        <!--Recent Bills-->
         <scene sceneID="iCN-3N-5Ah">
             <objects>
                 <viewController providesPresentationContextTransitionStyle="YES" id="FCK-bi-PT5" customClass="CardViewController" customModule="Lincoln_Laws" customModuleProvider="target" sceneMemberID="viewController">
@@ -53,7 +53,7 @@
                             <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="bg"/>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="jam-Hu-oCj"/>
+                    <tabBarItem key="tabBarItem" title="Recent Bills" image="bill" id="jam-Hu-oCj"/>
                     <connections>
                         <outlet property="cardCollectionView" destination="y2I-mK-D1T" id="vu4-IU-plj"/>
                         <segue destination="Cq6-QP-smf" kind="show" identifier="cell" id="Ici-We-A0P"/>
@@ -264,4 +264,7 @@
             <point key="canvasLocation" x="-1408" y="-214"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bill" width="48" height="48"/>
+    </resources>
 </document>

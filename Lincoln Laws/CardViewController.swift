@@ -14,6 +14,14 @@ import UIKit
 
 class CardViewController: UIViewController {
 
+    private var billData: MostRecentBillData? {
+        didSet {
+            DispatchQueue.main.async {
+                self.cardCollectionView.reloadData()
+            }
+        }
+    }
+
     private var previouslySelectedCell: CellCard? {
         willSet {
             previouslySelectedCell?.hero.id = nil
@@ -32,8 +40,8 @@ class CardViewController: UIViewController {
             cardCollectionView.delegate = self
             cardCollectionView.register(Cell.self, forCellWithReuseIdentifier: Cell.description())
 
-            LincolnLawsServer.shared.getMostRecentBills(successHandler: { (bills) in
-                print(bills)
+            LincolnLawsServer.shared.getMostRecentBills(successHandler: { (billData) in
+                self.billData = billData
             }) { (_, _, _) in
                 print("fail")
             }
@@ -52,16 +60,15 @@ class CardViewController: UIViewController {
 extension CardViewController: UICollectionViewDataSource {
 
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return billData?.bills.count ?? 0
     }
 
     public func collectionView(_ collectionView: UICollectionView,
                                cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.description(), for: indexPath) as! Cell
-        for i in 0...indexPath.row {
-            cell.card.titleLabel.text = "\(i)"
-            cell.card.label.text = cell.card.label.text == nil ? "LINE 1" : cell.card.label.text! + "\n YO"
-        }
+
+        cell.card.titleLabel.text = billData!.bills[indexPath.row].shortTitle
+
         cell.card.addTarget(self, action: #selector(segue(for:)), for: .touchUpInside)
         return cell
     }
