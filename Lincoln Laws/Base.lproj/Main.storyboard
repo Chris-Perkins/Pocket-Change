@@ -40,11 +40,11 @@
                                 <collectionViewLayout key="collectionViewLayout" id="nwr-Ga-tbf" customClass="MagazineLayout" customModule="MagazineLayout"/>
                                 <cells/>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4o4-of-eq3">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4o4-of-eq3" userLabel="status bar cap">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGA-Hu-1mT" customClass="GradientView" customModule="Lincoln_Laws" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGA-Hu-1mT" userLabel="status bar gradient fade" customClass="GradientView" customModule="Lincoln_Laws" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Ut1-So-IIL"/>
@@ -59,18 +59,29 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHorizontal" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view hidden="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="3aL-sP-J3d" customClass="LOTAnimationView">
+                                <rect key="frame" x="0.0" y="70" width="375" height="548"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="loading"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="NPe-6u-uWh" firstAttribute="trailing" secondItem="3aL-sP-J3d" secondAttribute="trailing" id="2nk-MI-5EW"/>
                             <constraint firstItem="NPe-6u-uWh" firstAttribute="bottom" secondItem="y2I-mK-D1T" secondAttribute="bottom" constant="8" id="3So-Hb-9E3"/>
                             <constraint firstItem="y2I-mK-D1T" firstAttribute="leading" secondItem="NPe-6u-uWh" secondAttribute="leading" constant="16" id="6cG-c5-SV7"/>
                             <constraint firstItem="4o4-of-eq3" firstAttribute="leading" secondItem="NPe-6u-uWh" secondAttribute="leading" id="E5z-OW-0tl"/>
                             <constraint firstItem="NPe-6u-uWh" firstAttribute="trailing" secondItem="y2I-mK-D1T" secondAttribute="trailing" constant="16" id="KDz-Uu-q2u"/>
                             <constraint firstItem="4o4-of-eq3" firstAttribute="top" secondItem="P6H-KI-drB" secondAttribute="top" id="LcQ-v1-yBl"/>
+                            <constraint firstItem="3aL-sP-J3d" firstAttribute="leading" secondItem="NPe-6u-uWh" secondAttribute="leading" id="OhU-xT-yyD"/>
                             <constraint firstItem="y2I-mK-D1T" firstAttribute="top" secondItem="NPe-6u-uWh" secondAttribute="top" constant="8" id="Sed-p4-GaK"/>
                             <constraint firstItem="4o4-of-eq3" firstAttribute="trailing" secondItem="NPe-6u-uWh" secondAttribute="trailing" id="g2Z-gT-l62"/>
                             <constraint firstItem="NPe-6u-uWh" firstAttribute="top" secondItem="4o4-of-eq3" secondAttribute="bottom" id="gG1-6l-ai7"/>
+                            <constraint firstItem="NPe-6u-uWh" firstAttribute="bottom" secondItem="3aL-sP-J3d" secondAttribute="bottom" id="iks-Kd-giK"/>
                             <constraint firstItem="yGA-Hu-1mT" firstAttribute="trailing" secondItem="NPe-6u-uWh" secondAttribute="trailing" id="mdO-2O-2io"/>
+                            <constraint firstItem="3aL-sP-J3d" firstAttribute="top" secondItem="yGA-Hu-1mT" secondAttribute="bottom" id="ngF-ei-yqW"/>
                             <constraint firstItem="yGA-Hu-1mT" firstAttribute="leading" secondItem="NPe-6u-uWh" secondAttribute="leading" id="qAg-Xr-cnC"/>
                             <constraint firstItem="yGA-Hu-1mT" firstAttribute="top" secondItem="4o4-of-eq3" secondAttribute="bottom" id="ywI-bD-6xP"/>
                         </constraints>
@@ -82,6 +93,7 @@
                     <tabBarItem key="tabBarItem" title="Recent Bills" image="bill" id="jam-Hu-oCj"/>
                     <connections>
                         <outlet property="cardCollectionView" destination="y2I-mK-D1T" id="vu4-IU-plj"/>
+                        <outlet property="lottieView" destination="3aL-sP-J3d" id="vCr-B5-ma1"/>
                         <segue destination="Cq6-QP-smf" kind="show" identifier="cell" id="Ici-We-A0P"/>
                     </connections>
                 </viewController>
@@ -229,7 +241,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="tol-do-8Ot" firstAttribute="top" secondItem="cru-3l-9By" secondAttribute="top" constant="8" id="6cB-hB-rEQ"/>
                                                     <constraint firstItem="v5I-C5-q69" firstAttribute="leading" secondItem="cru-3l-9By" secondAttribute="leading" constant="8" id="Cv4-WZ-07A"/>

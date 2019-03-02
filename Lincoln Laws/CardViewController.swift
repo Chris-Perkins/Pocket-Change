@@ -7,6 +7,7 @@
 //
 
 import Hero
+import Lottie
 import MagazineLayout
 import UIKit
 
@@ -51,6 +52,13 @@ class CardViewController: UIViewController {
     @objc public func segue(for cell: CellCard) {
         selectedCell = cell
         performSegue(withIdentifier: "cell", sender: self)
+    }
+
+    @IBOutlet weak var lottieView: LOTAnimationView! {
+        didSet {
+            lottieView.loopAnimation = true
+            lottieView.play()
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

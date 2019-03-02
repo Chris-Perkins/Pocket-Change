@@ -26,7 +26,7 @@ public class CardDetailViewController: UIViewController {
                 sponsorLabel?.text = "Sponsoring Party: Democrat"
             }
             titleLabel?.text = bill.title
-            descriptionLabel?.text = "ADSADA"
+            descriptionLabel?.text = bill.billId
 
             LincolnLawsServer.shared.getFullText(bill: bill, successHandler: { (fulldata) in
                 self.billFullText = fulldata
@@ -63,7 +63,7 @@ public class CardDetailViewController: UIViewController {
                 partySponsorLottieView?.animation = nil
                 return
             }
-            titleLabel?.text = bill.shortTitle
+            titleLabel?.text = bill.title
         }
     }
 
@@ -72,7 +72,7 @@ public class CardDetailViewController: UIViewController {
             guard let bill = billToDisplay else {
                 return
             }
-            descriptionLabel?.text = "ASDLJAD"
+            descriptionLabel?.text = bill.billId
         }
     }
 
