@@ -100,7 +100,7 @@ extension CardViewController: UICollectionViewDelegateMagazineLayout {
     /// - Returns: 12
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                                horizontalSpacingForItemsInSectionAtIndex index: Int) -> CGFloat {
-        return 12
+        return 18
     }
 
     /// `collectionView(_: UICollectionView, layout: UICollectionViewLayout,
@@ -113,7 +113,7 @@ extension CardViewController: UICollectionViewDelegateMagazineLayout {
     /// - Returns: 12
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                                verticalSpacingForElementsInSectionAtIndex index: Int) -> CGFloat {
-        return 12
+        return 18
     }
 
     /// `collectionView(_: UICollectionView, layout: UICollectionViewLayout, insetsForItemsInSectionAtIndex: Int)` is

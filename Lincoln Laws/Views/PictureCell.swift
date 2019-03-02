@@ -16,6 +16,7 @@ public class PictureCell: UICollectionViewCell {
     override public init(frame: CGRect) {
         imageView = UIImageView(frame: .zero)
         imageView.contentMode = .scaleAspectFit
+        imageView.tintColor = UIColor.white
 
         super.init(frame: frame)
 

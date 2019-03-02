@@ -50,6 +50,8 @@ final class Cell: MagazineLayoutCollectionViewCell {
         label.numberOfLines = 0
 
         let card = MDCCard(frame: .zero)
+        card.backgroundColor = UIColor(red: 37.0 / 255.0, green: 58.0 / 255.0 , blue: 90.0 / 255.0, alpha: 1)
+        //card.tintColor = UIColor(red: 103, green: 86, blue: 109, alpha: 1)
         contentView.addSubview(card)
         card.copy(.top, .bottom, .left, .right, of: contentView)
 
@@ -59,16 +61,25 @@ final class Cell: MagazineLayoutCollectionViewCell {
 
         titleLabel.copy(.top, .leading, of: card).withOffsets(8)
         titleLabel.copy(.trailing, of: card).withOffset(-8)
+        titleLabel.textColor = UIColor.white
 
         label.copy(.leading, of: card).withOffset(8)
         label.copy(.trailing, of: card).withOffset(-8)
         label.cling(.top, to: titleLabel, .bottom).withOffset(8)
+        label.textColor = UIColor.white
 
         billClassificationCollectionView.cling(.top, to: label, .bottom).withOffset(8)
         billClassificationCollectionView.copy(.leading, of: card).withOffset(8)
         billClassificationCollectionView.copy(.trailing, of: card).withOffset(-8)
         billClassificationCollectionView.copy(.bottom, of: card).withOffset(-8)
         billClassificationCollectionView.setHeight(classificationImageSquareDimension)
+
+        clipsToBounds = false
+        card.clipsToBounds = false
+        card.layer.shadowColor = UIColor.black.cgColor
+        card.layer.shadowRadius = 5
+        card.layer.shadowOpacity = 0.5
+        card.layer.shadowOffset = CGSize(width: 1, height: 1)
     }
 
     required init?(coder aDecoder: NSCoder) {

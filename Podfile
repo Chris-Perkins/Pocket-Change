@@ -9,5 +9,6 @@ target 'Lincoln Laws' do
   pod 'MagazineLayout', '~> 1.2.1'
   pod 'MaterialComponents/Cards'
   pod 'ClingConstraints'
+  pod 'Hero'
 
 end
