@@ -16,7 +16,6 @@
 		228D6ED9222AE2D2009F8826 /* dollar.json in Resources */ = {isa = PBXBuildFile; fileRef = 228D6ED8222AE2D2009F8826 /* dollar.json */; };
 		228D6EDB222AECAD009F8826 /* leaf.json in Resources */ = {isa = PBXBuildFile; fileRef = 228D6EDA222AECAD009F8826 /* leaf.json */; };
 		228D6EE5222AEF98009F8826 /* shield.json in Resources */ = {isa = PBXBuildFile; fileRef = 228D6EE4222AEF98009F8826 /* shield.json */; };
-		228D6EE8222AF003009F8826 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6EE7222AF003009F8826 /* TestData.swift */; };
 		228D6EEA222AF48C009F8826 /* globe.json in Resources */ = {isa = PBXBuildFile; fileRef = 228D6EE9222AF48C009F8826 /* globe.json */; };
 		228D6EEC222AF8BC009F8826 /* house.json in Resources */ = {isa = PBXBuildFile; fileRef = 228D6EEB222AF8BC009F8826 /* house.json */; };
 		228D6EEE222AF974009F8826 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6EED222AF974009F8826 /* State.swift */; };
@@ -42,7 +41,6 @@
 		228D6ED8222AE2D2009F8826 /* dollar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dollar.json; sourceTree = "<group>"; };
 		228D6EDA222AECAD009F8826 /* leaf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = leaf.json; sourceTree = "<group>"; };
 		228D6EE4222AEF98009F8826 /* shield.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shield.json; sourceTree = "<group>"; };
-		228D6EE7222AF003009F8826 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		228D6EE9222AF48C009F8826 /* globe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = globe.json; sourceTree = "<group>"; };
 		228D6EEB222AF8BC009F8826 /* house.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = house.json; sourceTree = "<group>"; };
 		228D6EED222AF974009F8826 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
@@ -102,14 +100,6 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
-		228D6EE6222AEFC8009F8826 /* TestData */ = {
-			isa = PBXGroup;
-			children = (
-				228D6EE7222AF003009F8826 /* TestData.swift */,
-			);
-			path = TestData;
-			sourceTree = "<group>";
-		};
 		228D6EEF222B07AF009F8826 /* Data Types */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				228D6EEF222B07AF009F8826 /* Data Types */,
-				228D6EE6222AEFC8009F8826 /* TestData */,
 				228D6ECF222ADCD0009F8826 /* Images */,
 				228D6EC8222A6A7A009F8826 /* Server */,
 				228D6EC3222A59DE009F8826 /* ClingConstraintsHelpers */,
@@ -313,7 +302,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				228D6EF5222B110C009F8826 /* MostRecentBillData.swift in Sources */,
-				228D6EE8222AF003009F8826 /* TestData.swift in Sources */,
 				228D6EF1222B07BE009F8826 /* Bill.swift in Sources */,
 				22F62BF2222A3D62001D192F /* CardViewController.swift in Sources */,
 				228D6EF7222B1451009F8826 /* Chamber.swift in Sources */,
