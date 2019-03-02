@@ -12,8 +12,8 @@ public class CardDetailViewController: UIViewController {
     @IBOutlet weak var closeButton: UIButton! {
         didSet {
             closeButton.layer.shadowColor = UIColor.white.cgColor
-            closeButton.layer.shadowOffset = CGSize(width: 1, height: 1)
-            closeButton.layer.shadowRadius = 5
+            closeButton.layer.shadowOffset = CGSize.zero
+            closeButton.layer.shadowRadius = 2
             closeButton.layer.shadowOpacity = 1
         }
     }
