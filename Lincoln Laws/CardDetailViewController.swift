@@ -27,6 +27,33 @@ public class CardDetailViewController: UIViewController {
             }
             titleLabel?.text = bill.title
             descriptionLabel?.text = "ADSADA"
+
+            LincolnLawsServer.shared.getFullText(bill: bill, successHandler: { (fulldata) in
+                self.billFullText = fulldata
+            }) { (_, _, _) in
+                print("Fail")
+                return
+            }
+        }
+    }
+
+    public var billFullText: BillFullTextData? {
+        didSet {
+            DispatchQueue.main.async {
+                print(self.billFullText)
+                self.preambleText?.text = self.billFullText?.preamble
+                self.resolutionText?.text = self.billFullText?.resolutionBody
+            }
+        }
+    }
+    @IBOutlet weak var preambleText: UILabel! {
+        didSet {
+            preambleText?.text = billFullText?.preamble
+        }
+    }
+    @IBOutlet weak var resolutionText: UILabel! {
+        didSet {
+            resolutionText?.text = billFullText?.resolutionBody
         }
     }
 

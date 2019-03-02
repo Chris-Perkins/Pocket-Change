@@ -12,6 +12,7 @@ import Foundation
 public struct Bill: Codable {
     let billId: String
     let sponsorUri: URL
+    let billSlug: String
 
     let vetoed: Bool?
 //    let introducedDate: Date
@@ -33,6 +34,7 @@ public struct Bill: Codable {
     enum CodingKeys: String, CodingKey {
         case billId = "bill_id"
         case sponsorUri = "sponsor_uri"
+        case billSlug = "bill_slug"
 
         case vetoed
 //        case introducedDate = "introduced_date"

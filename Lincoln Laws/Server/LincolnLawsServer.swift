@@ -14,6 +14,8 @@ public class LincolnLawsServer {
         private static let baseEndPointString = "http://34.73.177.91:5010"
 
         public static let mostRecentUrl = URL(string: "\(baseEndPointString)/recent")!
+
+        public static let getFullTextUrl = "\(baseEndPointString)/fulltext/{0}/{1}/"
     }
 
     public enum RecentBillsResult {
@@ -41,6 +43,20 @@ public class LincolnLawsServer {
             guard let nonNilData = data, let returnedData = try? self.objectDecoder.decode(MostRecentBillData.self, from: nonNilData)  else {
                     failureHandler(data, response, error)
                     return
+            }
+            retrievedMostRecentBillData = returnedData
+            successHandler(returnedData)
+        }.resume()
+    }
+
+    func getFullText(bill: Bill, successHandler: @escaping (BillFullTextData) -> Void,
+                     failureHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        var request = URLRequest(url: URL(string: EndPoints.getFullTextUrl.replacingOccurrences(of: "{1}", with: bill.billSlug).replacingOccurrences(of: "{0}", with: "\(retrievedMostRecentBillData.congress)"))!)
+        request.timeoutInterval = 10
+        URLSession.shared.dataTask(with: request) {data,response,error in
+            guard let nonNilData = data, let returnedData = try? self.objectDecoder.decode(BillFullTextData.self, from: nonNilData)  else {
+                failureHandler(data, response, error)
+                return
             }
             successHandler(returnedData)
         }.resume()
