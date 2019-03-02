@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ozx-Uw-8Ur">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,19 +10,77 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Card View Controller-->
+        <scene sceneID="fI3-aW-9KK">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lincoln_Laws" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="avC-u0-kI8" customClass="CardViewController" customModule="Lincoln_Laws" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DwQ-6t-0rK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.24699999389999999" green="0.31799998880000002" blue="0.70999997849999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="8OK-Mo-0Ou"/>
                     </view>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="HL1-h5-TUu"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VGP-G7-Zfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-453" y="119"/>
+        </scene>
+        <!--Card View Controller-->
+        <scene sceneID="iCN-3N-5Ah">
+            <objects>
+                <viewController id="FCK-bi-PT5" customClass="CardViewController" customModule="Lincoln_Laws" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P6H-KI-drB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="y2I-mK-D1T">
+                                <rect key="frame" x="16" y="28" width="343" height="582"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewLayout key="collectionViewLayout" id="nwr-Ga-tbf" customClass="MagazineLayout" customModule="MagazineLayout"/>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.24699999389999999" green="0.31799998880000002" blue="0.70999997849999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NPe-6u-uWh" firstAttribute="bottom" secondItem="y2I-mK-D1T" secondAttribute="bottom" constant="8" id="3So-Hb-9E3"/>
+                            <constraint firstItem="y2I-mK-D1T" firstAttribute="leading" secondItem="NPe-6u-uWh" secondAttribute="leading" constant="16" id="6cG-c5-SV7"/>
+                            <constraint firstItem="NPe-6u-uWh" firstAttribute="trailing" secondItem="y2I-mK-D1T" secondAttribute="trailing" constant="16" id="KDz-Uu-q2u"/>
+                            <constraint firstItem="y2I-mK-D1T" firstAttribute="top" secondItem="NPe-6u-uWh" secondAttribute="top" constant="8" id="Sed-p4-GaK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NPe-6u-uWh"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="jam-Hu-oCj"/>
+                    <connections>
+                        <outlet property="cardCollectionView" destination="y2I-mK-D1T" id="vu4-IU-plj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v9v-do-pmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ZHv-vK-mQh">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <viewLayoutGuide key="safeArea" id="94y-UE-Ezu"/>
+                </collectionReusableView>
+            </objects>
+            <point key="canvasLocation" x="-455.19999999999999" y="-546.47676161919048"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="qai-Wv-Ofz">
+            <objects>
+                <tabBarController id="ozx-Uw-8Ur" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="wIW-88-zRQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="FCK-bi-PT5" kind="relationship" relationship="viewControllers" id="jNc-QW-FPG"/>
+                        <segue destination="avC-u0-kI8" kind="relationship" relationship="viewControllers" id="zcP-Zq-WrH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8nc-T6-wT0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1408" y="-214"/>
         </scene>
     </scenes>
 </document>

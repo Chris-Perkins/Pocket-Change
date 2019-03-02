@@ -6,7 +6,8 @@ target 'Lincoln Laws' do
   use_frameworks!
 
   # Pods for Lincoln Laws
-
+  pod 'MagazineLayout', '~> 1.2.1'
   pod 'MaterialComponents/Cards'
+  pod 'ClingConstraints'
 
 end
