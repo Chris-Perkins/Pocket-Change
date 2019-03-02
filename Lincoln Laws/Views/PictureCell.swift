@@ -15,10 +15,12 @@ public class PictureCell: UICollectionViewCell {
 
     override public init(frame: CGRect) {
         imageView = UIImageView(frame: .zero)
+        imageView.contentMode = .scaleAspectFit
 
         super.init(frame: frame)
 
         imageView.image = UIImage(named: "boi")
+
         contentView.addSubview(imageView)
         imageView.copy(.top, .bottom, .left, .right, of: contentView)
     }

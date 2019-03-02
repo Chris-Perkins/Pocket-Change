@@ -15,14 +15,33 @@ final class Cell: MagazineLayoutCollectionViewCell {
 
     // MARK: Lifecycle
 
+    // Title goes here
+    public let titleLabel: UILabel
+    // Short description goes here
+    public let label: UILabel
+    // Classification images go here
+    public let billClassificationCollectionView: UICollectionView
+
+    private let classificationImageSquareDimension: CGFloat = 32
+
     override init(frame: CGRect) {
         label = UILabel(frame: .zero)
         titleLabel = UILabel(frame: .zero)
-        billClassificationCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
+
+        let billClassViewLayout = UICollectionViewFlowLayout()
+        billClassViewLayout.itemSize = CGSize(width: classificationImageSquareDimension,
+                                              height: classificationImageSquareDimension)
+
+        billClassificationCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         billClassificationCollectionView.isUserInteractionEnabled = false
-        billClassificationCollectionView.backgroundColor = UIColor.red
+        billClassificationCollectionView.register(PictureCell.self,
+                                                  forCellWithReuseIdentifier: PictureCell.description())
 
         super.init(frame: frame)
+
+        billClassificationCollectionView.backgroundColor = UIColor.clear
+        billClassificationCollectionView.delegate = self
+        billClassificationCollectionView.dataSource = self
 
         titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
         titleLabel.numberOfLines = 0
@@ -38,17 +57,18 @@ final class Cell: MagazineLayoutCollectionViewCell {
         card.addSubview(label)
         card.addSubview(billClassificationCollectionView)
 
-        titleLabel.copy(.top, .leading, .trailing, of: card).withOffsets(8)
+        titleLabel.copy(.top, .leading, of: card).withOffsets(8)
+        titleLabel.copy(.trailing, of: card).withOffset(-8)
 
-        label.copy(.leading, .trailing, of: card).withOffsets(8)
+        label.copy(.leading, of: card).withOffset(8)
+        label.copy(.trailing, of: card).withOffset(-8)
         label.cling(.top, to: titleLabel, .bottom).withOffset(8)
 
         billClassificationCollectionView.cling(.top, to: label, .bottom).withOffset(8)
         billClassificationCollectionView.copy(.leading, of: card).withOffset(8)
         billClassificationCollectionView.copy(.trailing, of: card).withOffset(-8)
         billClassificationCollectionView.copy(.bottom, of: card).withOffset(-8)
-        billClassificationCollectionView.setHeight(45)
-
+        billClassificationCollectionView.setHeight(classificationImageSquareDimension)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -60,17 +80,10 @@ final class Cell: MagazineLayoutCollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
 
+        titleLabel.text = nil
         label.text = nil
         contentView.backgroundColor = nil
     }
-
-    // MARK: Private
-
-    public let label: UILabel
-
-    public let titleLabel: UILabel
-
-    public let billClassificationCollectionView: UICollectionView
 
 }
 
@@ -80,10 +93,9 @@ extension Cell: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        fatalError("XD")
+        return collectionView.dequeueReusableCell(withReuseIdentifier: PictureCell.description(), for: indexPath)
     }
 }
 
 extension Cell: UICollectionViewDelegate {
-
 }
