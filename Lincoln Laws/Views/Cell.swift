@@ -16,6 +16,7 @@ final class Cell: MagazineLayoutCollectionViewCell {
     // MARK: Lifecycle
     public let card: CellCard
 
+
     override init(frame: CGRect) {
         card = CellCard(frame: .zero)
 

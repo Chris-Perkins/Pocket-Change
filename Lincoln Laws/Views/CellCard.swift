@@ -19,6 +19,12 @@ public class CellCard: MDCCard {
     // Classification images go here
     public let billClassificationCollectionView: UICollectionView
 
+    public var billForCard: Bill? {
+        didSet {
+            titleLabel.text = billForCard?.shortTitle
+        }
+    }
+
     public let classificationImageSquareDimension: CGFloat = 32
 
     override public init(frame: CGRect) {

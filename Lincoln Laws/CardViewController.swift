@@ -22,11 +22,11 @@ class CardViewController: UIViewController {
         }
     }
 
-    private var previouslySelectedCell: CellCard? {
+    private var selectedCell: CellCard? {
         willSet {
-            previouslySelectedCell?.hero.id = nil
-            previouslySelectedCell?.titleLabel.hero.id = nil
-            previouslySelectedCell?.label.hero.id = nil
+            selectedCell?.hero.id = nil
+            selectedCell?.titleLabel.hero.id = nil
+            selectedCell?.label.hero.id = nil
 
             newValue?.hero.id = "card"
             newValue?.titleLabel.hero.id = "Title label"
@@ -49,8 +49,14 @@ class CardViewController: UIViewController {
     }
 
     @objc public func segue(for cell: CellCard) {
+        selectedCell = cell
         performSegue(withIdentifier: "cell", sender: self)
-        previouslySelectedCell = cell
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as?  CardDetailViewController {
+            destination.billToDisplay = selectedCell?.billForCard
+        }
     }
 }
 
@@ -67,7 +73,7 @@ extension CardViewController: UICollectionViewDataSource {
                                cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.description(), for: indexPath) as! Cell
 
-        cell.card.titleLabel.text = billData!.bills[indexPath.row].shortTitle
+        cell.card.billForCard = billData!.bills[indexPath.row]
 
         cell.card.addTarget(self, action: #selector(segue(for:)), for: .touchUpInside)
         return cell
