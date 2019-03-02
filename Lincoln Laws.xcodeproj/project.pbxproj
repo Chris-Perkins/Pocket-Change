@@ -19,6 +19,7 @@
 		228D6EE8222AF003009F8826 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6EE7222AF003009F8826 /* TestData.swift */; };
 		228D6EEA222AF48C009F8826 /* globe.json in Resources */ = {isa = PBXBuildFile; fileRef = 228D6EE9222AF48C009F8826 /* globe.json */; };
 		228D6EEC222AF8BC009F8826 /* house.json in Resources */ = {isa = PBXBuildFile; fileRef = 228D6EEB222AF8BC009F8826 /* house.json */; };
+		228D6EEE222AF974009F8826 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6EED222AF974009F8826 /* State.swift */; };
 		22F62BF0222A3D62001D192F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F62BEF222A3D62001D192F /* AppDelegate.swift */; };
 		22F62BF2222A3D62001D192F /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F62BF1222A3D62001D192F /* CardViewController.swift */; };
 		22F62BF5222A3D62001D192F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F62BF3222A3D62001D192F /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		228D6EE7222AF003009F8826 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		228D6EE9222AF48C009F8826 /* globe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = globe.json; sourceTree = "<group>"; };
 		228D6EEB222AF8BC009F8826 /* house.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = house.json; sourceTree = "<group>"; };
+		228D6EED222AF974009F8826 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		22F62BEC222A3D62001D192F /* Lincoln Laws.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lincoln Laws.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F62BEF222A3D62001D192F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22F62BF1222A3D62001D192F /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				228D6EE7222AF003009F8826 /* TestData.swift */,
+				228D6EED222AF974009F8826 /* State.swift */,
 			);
 			path = TestData;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				228D6EE8222AF003009F8826 /* TestData.swift in Sources */,
 				22F62BF2222A3D62001D192F /* CardViewController.swift in Sources */,
 				228D6EC5222A59EF009F8826 /* NSLayoutConstraintsExtensions.swift in Sources */,
+				228D6EEE222AF974009F8826 /* State.swift in Sources */,
 				228D6EC7222A5F25009F8826 /* PictureCell.swift in Sources */,
 				228D6ECE222AD534009F8826 /* CellCard.swift in Sources */,
 				22F62BF0222A3D62001D192F /* AppDelegate.swift in Sources */,
