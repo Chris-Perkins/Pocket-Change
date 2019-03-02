@@ -22,6 +22,7 @@
 		228D6EEE222AF974009F8826 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6EED222AF974009F8826 /* State.swift */; };
 		228D6EF1222B07BE009F8826 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6EF0222B07BE009F8826 /* Bill.swift */; };
 		228D6EF3222B0A69009F8826 /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6EF2222B0A69009F8826 /* Party.swift */; };
+		228D6EF5222B110C009F8826 /* MostRecentBillData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6EF4222B110C009F8826 /* MostRecentBillData.swift */; };
 		22F62BF0222A3D62001D192F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F62BEF222A3D62001D192F /* AppDelegate.swift */; };
 		22F62BF2222A3D62001D192F /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F62BF1222A3D62001D192F /* CardViewController.swift */; };
 		22F62BF5222A3D62001D192F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F62BF3222A3D62001D192F /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		228D6EED222AF974009F8826 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		228D6EF0222B07BE009F8826 /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		228D6EF2222B0A69009F8826 /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
+		228D6EF4222B110C009F8826 /* MostRecentBillData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostRecentBillData.swift; sourceTree = "<group>"; };
 		22F62BEC222A3D62001D192F /* Lincoln Laws.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lincoln Laws.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F62BEF222A3D62001D192F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22F62BF1222A3D62001D192F /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				228D6EED222AF974009F8826 /* State.swift */,
+				228D6EF4222B110C009F8826 /* MostRecentBillData.swift */,
 				228D6EF0222B07BE009F8826 /* Bill.swift */,
 				228D6EF2222B0A69009F8826 /* Party.swift */,
 			);
@@ -306,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				228D6EF5222B110C009F8826 /* MostRecentBillData.swift in Sources */,
 				228D6EE8222AF003009F8826 /* TestData.swift in Sources */,
 				228D6EF1222B07BE009F8826 /* Bill.swift in Sources */,
 				22F62BF2222A3D62001D192F /* CardViewController.swift in Sources */,

@@ -11,9 +11,14 @@ import Foundation
 public class LincolnLawsServer {
 
     private struct EndPoints {
-        private static let baseEndPointString = "https://ultra-function-233305.appspot.com"
+        private static let baseEndPointString = "http://34.73.177.91:5010"
 
-        private static let mostRecentUrl = URL(string: "\(baseEndPointString)/recent")!
+        public static let mostRecentUrl = URL(string: "\(baseEndPointString)/recent")!
+    }
+
+    public enum RecentBillsResult {
+        case success([Bill])
+        case failure(Data?, URLResponse?, Error?)
     }
 
     // Singleton, nice cool good job woo.
@@ -21,7 +26,25 @@ public class LincolnLawsServer {
         return LincolnLawsServer()
     }()
 
-    
+    /// `objectDecoder` is used for JSON Decoding. This JSONDecoder has a date decoding strategy of `.iso8601`.
+    private lazy var objectDecoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        return decoder
+    }()
+
+    func getMostRecentBills(successHandler: @escaping (MostRecentBillData) -> Void,
+                            failureHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        var request = URLRequest(url: EndPoints.mostRecentUrl)
+        request.timeoutInterval = 10
+        URLSession.shared.dataTask(with: request) {data,response,error in
+            guard let nonNilData = data, let returnedData = try? self.objectDecoder.decode(MostRecentBillData.self, from: nonNilData)  else {
+                    failureHandler(data, response, error)
+                    return
+            }
+            successHandler(returnedData)
+        }.resume()
+    }
 
     private init() {}
 }
