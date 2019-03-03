@@ -325,7 +325,7 @@
                                                 </constraints>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cru-3l-9By" userLabel="description">
-                                                <rect key="frame" x="0.0" y="752.5" width="375" height="77"/>
+                                                <rect key="frame" x="0.0" y="752.5" width="375" height="61"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tol-do-8Ot">
                                                         <rect key="frame" x="8" y="8" width="359" height="0.0"/>
@@ -343,19 +343,19 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Preamble Replacement Here&gt;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoM-4V-u2c">
-                                                        <rect key="frame" x="16" y="45" width="343" height="0.0"/>
+                                                        <rect key="frame" x="16" y="41" width="343" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resolution" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5I-C5-q69">
-                                                        <rect key="frame" x="8" y="61" width="359" height="0.0"/>
+                                                        <rect key="frame" x="8" y="49" width="359" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biG-4e-zKY">
-                                                        <rect key="frame" x="16" y="69" width="343" height="0.0"/>
+                                                        <rect key="frame" x="16" y="53" width="343" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -366,9 +366,9 @@
                                                     <constraint firstItem="tol-do-8Ot" firstAttribute="top" secondItem="cru-3l-9By" secondAttribute="top" constant="8" id="6cB-hB-rEQ"/>
                                                     <constraint firstItem="v5I-C5-q69" firstAttribute="leading" secondItem="cru-3l-9By" secondAttribute="leading" constant="8" id="Cv4-WZ-07A"/>
                                                     <constraint firstAttribute="trailing" secondItem="HoM-4V-u2c" secondAttribute="trailing" constant="16" id="D4t-d7-Xou"/>
-                                                    <constraint firstItem="HoM-4V-u2c" firstAttribute="top" secondItem="1zO-hW-UYh" secondAttribute="bottom" constant="8" id="G8h-D8-9jj"/>
+                                                    <constraint firstItem="HoM-4V-u2c" firstAttribute="top" secondItem="1zO-hW-UYh" secondAttribute="bottom" constant="4" id="G8h-D8-9jj"/>
                                                     <constraint firstAttribute="trailing" secondItem="biG-4e-zKY" secondAttribute="trailing" constant="16" id="MBI-tQ-ueq"/>
-                                                    <constraint firstItem="v5I-C5-q69" firstAttribute="top" secondItem="HoM-4V-u2c" secondAttribute="bottom" constant="16" id="Ml4-5D-JD7"/>
+                                                    <constraint firstItem="v5I-C5-q69" firstAttribute="top" secondItem="HoM-4V-u2c" secondAttribute="bottom" constant="8" id="Ml4-5D-JD7"/>
                                                     <constraint firstItem="tol-do-8Ot" firstAttribute="leading" secondItem="cru-3l-9By" secondAttribute="leading" constant="8" id="cRx-iS-Lta"/>
                                                     <constraint firstItem="1zO-hW-UYh" firstAttribute="leading" secondItem="cru-3l-9By" secondAttribute="leading" constant="8" id="ddN-rW-Kfo"/>
                                                     <constraint firstAttribute="trailing" secondItem="1zO-hW-UYh" secondAttribute="trailing" constant="8" id="dgA-nd-odq"/>
@@ -378,7 +378,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="biG-4e-zKY" secondAttribute="bottom" constant="8" id="p4R-kg-gBP"/>
                                                     <constraint firstAttribute="trailing" secondItem="tol-do-8Ot" secondAttribute="trailing" constant="8" id="rDr-cS-13q"/>
                                                     <constraint firstAttribute="trailing" secondItem="v5I-C5-q69" secondAttribute="trailing" constant="8" id="tXd-EU-f32"/>
-                                                    <constraint firstItem="biG-4e-zKY" firstAttribute="top" secondItem="v5I-C5-q69" secondAttribute="bottom" constant="8" id="vqO-P3-tUu"/>
+                                                    <constraint firstItem="biG-4e-zKY" firstAttribute="top" secondItem="v5I-C5-q69" secondAttribute="bottom" constant="4" id="vqO-P3-tUu"/>
                                                 </constraints>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNF-vT-rl7" userLabel="summary container">
