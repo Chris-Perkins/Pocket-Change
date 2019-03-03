@@ -62,7 +62,6 @@ public class CardDetailViewController: UIViewController {
     public var billFullText: BillFullTextData? {
         didSet {
             DispatchQueue.main.async {
-                print(self.billFullText)
                 UIView.animate(withDuration: 0.2, animations: {
                     if (self.billFullText?.preamble ?? "").isEmpty && (self.billFullText?.resolutionBody ?? "").isEmpty {
                         self.summaryContainer.isHidden = false

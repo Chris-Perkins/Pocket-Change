@@ -9,3 +9,5 @@
 import Foundation
 
 public var retrievedMostRecentBillData: MostRecentBillData!
+
+public var globalHouseMembers: [MemberData]?

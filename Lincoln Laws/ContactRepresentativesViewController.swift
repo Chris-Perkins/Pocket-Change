@@ -8,6 +8,7 @@
 
 import CoreLocation
 import Lottie
+import MagazineLayout
 import UIKit
 
 public class ContactRepresentativesViewController: UIViewController {
@@ -24,14 +25,18 @@ public class ContactRepresentativesViewController: UIViewController {
             guard selectedState != nil else {
                 return
             }
-            LincolnLawsServer.shared.getHouseMembers(successHandler: { (members) in
-                self.houseMembers = members.reduce([], { (currResult, membersResult) -> [MemberData] in
-                    var currResult = currResult
-                    currResult.append(contentsOf: membersResult.members)
-                    return currResult
-                })
-            }) { (data, response, _) in
-                print("FAIL")
+            if globalHouseMembers == nil {
+                LincolnLawsServer.shared.getHouseMembers(successHandler: { [weak self] (members) in
+                    self?.houseMembers = members.reduce([], { (currResult, membersResult) -> [MemberData] in
+                        var currResult = currResult
+                        currResult.append(contentsOf: membersResult.members)
+                        return currResult
+                    })
+                }) { (data, response, _) in
+                    print("FAIL")
+                }
+            } else {
+                houseMembers = globalHouseMembers
             }
         }
     }
@@ -43,9 +48,21 @@ public class ContactRepresentativesViewController: UIViewController {
             guard let knownMembers = members else {
                 return
             }
-            print(knownMembers.map({ (member) -> String in
-                return "\(member.firstName) \(member.lastName)"
-            }))
+            animationContainingView.isHidden = true
+            stateMembers = knownMembers
+        }
+    }
+
+    private var stateMembers: [MemberData]? {
+        didSet {
+            representativesTableView.reloadData()
+        }
+    }
+
+    @IBOutlet weak var representativesTableView: UITableView! {
+        didSet {
+            representativesTableView.delegate = self
+            representativesTableView.dataSource = self
         }
     }
 
@@ -60,12 +77,6 @@ public class ContactRepresentativesViewController: UIViewController {
         }
     }
 
-    @IBOutlet weak var representativesCollectionView: UICollectionView! {
-        didSet {
-            representativesCollectionView.setHeight(representativesCollectionView.contentSize.height)
-        }
-    }
-
     override public func viewDidLoad() {
         super.viewDidLoad()
 
@@ -73,7 +84,7 @@ public class ContactRepresentativesViewController: UIViewController {
     }
 
     private func updateForLatLonOfUser(from location: CLLocation) {
-        LincolnLawsServer.shared.getGoogleMapsLocation(lat: location.coordinate.latitude, lon: location.coordinate.longitude, successHandler: { (data) in
+        LincolnLawsServer.shared.getGoogleMapsLocation(lat: location.coordinate.latitude, lon: location.coordinate.longitude, successHandler: { [weak self] (data) in
 
             var foundState: State = .unknown
 
@@ -88,7 +99,7 @@ public class ContactRepresentativesViewController: UIViewController {
                     }
                 }
             }
-            self.selectedState = foundState
+            self?.selectedState = foundState
         }) { (data, response, error) in
             print("FAIL")
         }
@@ -99,4 +110,25 @@ extension ContactRepresentativesViewController: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locationOfUser = locations.first
     }
+}
+
+// MARK: - UICollectionViewDataSource Extension
+
+extension ContactRepresentativesViewController: UITableViewDelegate {
+}
+
+// MARK: - UICollectionViewDelegateMagazineLayout Extension
+
+extension ContactRepresentativesViewController: UITableViewDataSource {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return stateMembers?.count ?? 0
+    }
+
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LMAO") as! RepresentativeCell
+        cell.nameLabel.text = "\(stateMembers![indexPath.row].firstName) \(stateMembers![indexPath.row].lastName)"
+        return cell
+    }
+
+
 }
