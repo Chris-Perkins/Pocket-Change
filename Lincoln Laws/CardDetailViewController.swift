@@ -11,6 +11,16 @@ import UIKit
 import Lottie
 
 public class CardDetailViewController: UIViewController {
+    @IBOutlet weak var loadingContainerView: UIView!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var descriptionContainer: UIView!
+
+    @IBOutlet weak var loadingAnimationView: LOTAnimationView! {
+        didSet {
+            loadingAnimationView.loopAnimation = true
+            loadingAnimationView.play()
+        }
+    }
 
     public var billToDisplay: Bill? {
         didSet {
@@ -40,7 +50,11 @@ public class CardDetailViewController: UIViewController {
     public var billFullText: BillFullTextData? {
         didSet {
             DispatchQueue.main.async {
-                print(self.billFullText)
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.loadingContainerView.isHidden = true
+                    self.descriptionContainer.isHidden = false
+                    self.stackView.layoutIfNeeded()
+                })
                 self.preambleText?.text = self.billFullText?.preamble
                 self.resolutionText?.text = self.billFullText?.resolutionBody
             }

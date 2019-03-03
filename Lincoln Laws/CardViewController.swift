@@ -15,6 +15,8 @@ import UIKit
 
 class CardViewController: UIViewController {
 
+    @IBOutlet weak var loadingView: UIView!
+
     private var billData: MostRecentBillData? {
         didSet {
             DispatchQueue.main.async {
@@ -41,10 +43,16 @@ class CardViewController: UIViewController {
             cardCollectionView.delegate = self
             cardCollectionView.register(Cell.self, forCellWithReuseIdentifier: Cell.description())
 
+            print(":D")
             LincolnLawsServer.shared.getMostRecentBills(successHandler: { (billData) in
                 self.billData = billData
+                DispatchQueue.main.async {
+                    UIView.animate(withDuration: 0.2, animations: {
+                        self.loadingView.alpha = 0
+                    })
+                }
             }) { (_, _, _) in
-                print("fail")
+                self.loadingView.backgroundColor = UIColor.red
             }
         }
     }
