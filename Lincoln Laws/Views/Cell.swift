@@ -22,9 +22,6 @@ final class Cell: MagazineLayoutCollectionViewCell {
 
         super.init(frame: frame)
 
-        card.billClassificationCollectionView.delegate = self
-        card.billClassificationCollectionView.dataSource = self
-
         card.backgroundColor = UIColor(red: 37.0 / 255.0, green: 58.0 / 255.0 , blue: 90.0 / 255.0, alpha: 1)
         //card.tintColor = UIColor(red: 103, green: 86, blue: 109, alpha: 1)
         contentView.addSubview(card)
@@ -52,36 +49,4 @@ final class Cell: MagazineLayoutCollectionViewCell {
         contentView.backgroundColor = nil
     }
 
-}
-
-extension Cell: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PictureCell.description(), for: indexPath) as! PictureCell
-        switch indexPath.row {
-        case 0:
-            cell.lottieView.setAnimation(named: "globe")
-        case 1:
-            cell.lottieView.setAnimation(named: "leaf")
-        case 2:
-            cell.lottieView.setAnimation(named: "shield")
-        case 3:
-            cell.lottieView.setAnimation(named: "dollar")
-        default:
-            cell.lottieView.setAnimation(named: "house")
-        }
-        return cell
-    }
-}
-
-extension Cell: UICollectionViewDelegate {
-}
-
-extension Cell: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: card.classificationImageSquareDimension, height: card.classificationImageSquareDimension)
-    }
 }

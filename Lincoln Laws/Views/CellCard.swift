@@ -41,6 +41,9 @@ public class CellCard: MDCCard {
 
         billClassificationCollectionView.backgroundColor = UIColor.clear
 
+        billClassificationCollectionView.delegate = self
+        billClassificationCollectionView.dataSource = self
+
         addSubview(titleLabel)
         addSubview(label)
         addSubview(billClassificationCollectionView)
@@ -69,5 +72,50 @@ public class CellCard: MDCCard {
 
     public required init?(coder aDecoder: NSCoder) {
         fatalError("Nope!")
+    }
+
+    private func getBillImageNames() -> [String] {
+        guard let bill = billForCard else {
+            return []
+        }
+
+        var currentBillImages = [String]()
+        if bill.tagEnvironment {
+            currentBillImages.append("leaf")
+        }
+        if bill.tagDA {
+            currentBillImages.append("house")
+        }
+        if bill.tagFA {
+            currentBillImages.append("globe")
+        }
+        if bill.tagDefense {
+            currentBillImages.append("shield")
+        }
+        if bill.tagEconomy {
+            currentBillImages.append("dollar")
+        }
+        return currentBillImages
+    }
+}
+
+extension CellCard: UICollectionViewDataSource {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return getBillImageNames().count
+    }
+
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PictureCell.description(), for: indexPath) as! PictureCell
+        cell.lottieView.setAnimation(named: getBillImageNames()[indexPath.row])
+        return cell
+    }
+}
+
+extension CellCard: UICollectionViewDelegate {
+}
+
+extension CellCard: UICollectionViewDelegateFlowLayout {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: classificationImageSquareDimension, height: classificationImageSquareDimension)
     }
 }
