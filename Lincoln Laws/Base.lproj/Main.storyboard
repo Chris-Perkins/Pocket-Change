@@ -20,7 +20,7 @@
                         <color key="backgroundColor" red="1" green="0.94117647058823528" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="8OK-Mo-0Ou"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="HL1-h5-TUu"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="HL1-h5-TUu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VGP-G7-Zfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -77,15 +77,51 @@
                                         <color key="textColor" red="0.1450980392" green="0.2274509804" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SmR-kd-Pq6" userLabel="retryView">
+                                        <rect key="frame" x="16" y="454.5" width="343" height="96.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An error occurred while downloading bill data" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgc-fP-g4g">
+                                                <rect key="frame" x="8" y="8" width="327" height="50.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6m-wX-KA6">
+                                                <rect key="frame" x="0.0" y="66.5" width="343" height="30"/>
+                                                <color key="backgroundColor" red="0.24699999389999999" green="0.31799998880000002" blue="0.70999997849999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="dhB-UO-EGp"/>
+                                                </constraints>
+                                                <state key="normal" title="Retry Download">
+                                                    <color key="titleColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="retryButtonPress:" destination="FCK-bi-PT5" eventType="touchUpInside" id="Fje-Pu-UKE"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="c6m-wX-KA6" secondAttribute="trailing" id="6T9-A3-uC4"/>
+                                            <constraint firstItem="c6m-wX-KA6" firstAttribute="leading" secondItem="SmR-kd-Pq6" secondAttribute="leading" id="FoD-Kf-Try"/>
+                                            <constraint firstAttribute="trailing" secondItem="bgc-fP-g4g" secondAttribute="trailing" constant="8" id="TXq-1M-ihO"/>
+                                            <constraint firstItem="bgc-fP-g4g" firstAttribute="leading" secondItem="SmR-kd-Pq6" secondAttribute="leading" constant="8" id="juj-3X-T7X"/>
+                                            <constraint firstItem="bgc-fP-g4g" firstAttribute="top" secondItem="SmR-kd-Pq6" secondAttribute="top" constant="8" id="lzX-J0-PZ2"/>
+                                            <constraint firstAttribute="bottom" secondItem="c6m-wX-KA6" secondAttribute="bottom" id="wg6-AB-ag8"/>
+                                            <constraint firstItem="c6m-wX-KA6" firstAttribute="top" secondItem="bgc-fP-g4g" secondAttribute="bottom" constant="8" id="ykJ-mf-vTO"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="SmR-kd-Pq6" firstAttribute="top" secondItem="Sca-Aw-91f" secondAttribute="top" id="ALb-fu-dJl"/>
                                     <constraint firstAttribute="trailing" secondItem="Sca-Aw-91f" secondAttribute="trailing" constant="16" id="G6v-jL-kxl"/>
                                     <constraint firstItem="3aL-sP-J3d" firstAttribute="width" secondItem="Xch-1u-0oO" secondAttribute="width" id="Rh4-FD-8hp"/>
                                     <constraint firstItem="3aL-sP-J3d" firstAttribute="centerY" secondItem="Xch-1u-0oO" secondAttribute="centerY" constant="-50" id="Wsb-60-IFV"/>
                                     <constraint firstItem="3aL-sP-J3d" firstAttribute="centerX" secondItem="Xch-1u-0oO" secondAttribute="centerX" constant="20" id="YRk-J5-MIz"/>
+                                    <constraint firstItem="SmR-kd-Pq6" firstAttribute="trailing" secondItem="Sca-Aw-91f" secondAttribute="trailing" id="gvQ-g1-Tda"/>
                                     <constraint firstItem="Sca-Aw-91f" firstAttribute="leading" secondItem="Xch-1u-0oO" secondAttribute="leading" constant="16" id="mvu-2o-Kzw"/>
                                     <constraint firstItem="Sca-Aw-91f" firstAttribute="top" secondItem="3aL-sP-J3d" secondAttribute="bottom" constant="8" id="o58-pQ-org"/>
+                                    <constraint firstItem="SmR-kd-Pq6" firstAttribute="leading" secondItem="Sca-Aw-91f" secondAttribute="leading" id="sk6-d9-DYT"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -115,8 +151,10 @@
                     <tabBarItem key="tabBarItem" title="Recent Bills" image="bill" id="jam-Hu-oCj"/>
                     <connections>
                         <outlet property="cardCollectionView" destination="y2I-mK-D1T" id="vu4-IU-plj"/>
+                        <outlet property="contactingCapitolHillLabel" destination="Sca-Aw-91f" id="dLR-z9-Y5M"/>
                         <outlet property="loadingView" destination="Xch-1u-0oO" id="Rxh-9j-T5E"/>
                         <outlet property="lottieView" destination="3aL-sP-J3d" id="vCr-B5-ma1"/>
+                        <outlet property="retryDownloadView" destination="SmR-kd-Pq6" id="ndu-qo-SKt"/>
                         <segue destination="Cq6-QP-smf" kind="show" identifier="cell" id="Ici-We-A0P"/>
                     </connections>
                 </viewController>
@@ -517,35 +555,6 @@
                                     <constraint firstAttribute="bottom" secondItem="1lp-a2-h50" secondAttribute="bottom" constant="8" id="fxO-F0-S1a"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WqN-KJ-CMd">
-                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7CW-Pe-9zI" customClass="LOTAnimationView">
-                                        <rect key="frame" x="37.5" y="115.5" width="300" height="300"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="7CW-Pe-9zI" secondAttribute="height" multiplier="1:1" id="wO0-e1-TEY"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="spinner"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finding your Representatives..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyd-yo-x3k">
-                                        <rect key="frame" x="16" y="399.5" width="343" height="64.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
-                                        <color key="textColor" red="0.1450980392" green="0.2274509804" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="gyd-yo-x3k" secondAttribute="trailing" constant="16" id="5Sk-E2-o6v"/>
-                                    <constraint firstItem="gyd-yo-x3k" firstAttribute="leading" secondItem="WqN-KJ-CMd" secondAttribute="leading" constant="16" id="8oT-uk-gYv"/>
-                                    <constraint firstItem="7CW-Pe-9zI" firstAttribute="centerX" secondItem="WqN-KJ-CMd" secondAttribute="centerX" id="Tsh-r9-HrA"/>
-                                    <constraint firstItem="7CW-Pe-9zI" firstAttribute="width" secondItem="WqN-KJ-CMd" secondAttribute="width" multiplier="0.8" id="UCU-5T-nqx"/>
-                                    <constraint firstItem="7CW-Pe-9zI" firstAttribute="centerY" secondItem="WqN-KJ-CMd" secondAttribute="centerY" constant="-32" id="bI8-u0-ic0"/>
-                                    <constraint firstItem="gyd-yo-x3k" firstAttribute="top" secondItem="7CW-Pe-9zI" secondAttribute="bottom" constant="-16" id="hQU-UQ-zM1"/>
-                                </constraints>
-                            </view>
                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="noC-W6-MSJ">
                                 <rect key="frame" x="0.0" y="72" width="375" height="595"/>
                                 <subviews>
@@ -633,6 +642,72 @@
                                     </tableView>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WqN-KJ-CMd">
+                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7CW-Pe-9zI" customClass="LOTAnimationView">
+                                        <rect key="frame" x="37.5" y="115.5" width="300" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="7CW-Pe-9zI" secondAttribute="height" multiplier="1:1" id="wO0-e1-TEY"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="spinner"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finding your Representatives..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyd-yo-x3k">
+                                        <rect key="frame" x="16" y="399.5" width="343" height="64.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                        <color key="textColor" red="0.1450980392" green="0.2274509804" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="guh-JP-i9Y">
+                                        <rect key="frame" x="16" y="399.5" width="343" height="96.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An error occurred while finding your representatives." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EU9-N2-lnh">
+                                                <rect key="frame" x="8" y="8" width="327" height="50.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qM9-vn-9QZ">
+                                                <rect key="frame" x="0.0" y="66.5" width="343" height="30"/>
+                                                <color key="backgroundColor" red="0.24699999389999999" green="0.31799998880000002" blue="0.70999997849999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="0Ue-jf-xp6"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Retry Download">
+                                                    <color key="titleColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="retryButtonPress:" destination="evg-KN-xn6" eventType="touchUpInside" id="X89-sC-SnM"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="qM9-vn-9QZ" firstAttribute="leading" secondItem="guh-JP-i9Y" secondAttribute="leading" id="2vP-Cb-5SU"/>
+                                            <constraint firstAttribute="bottom" secondItem="qM9-vn-9QZ" secondAttribute="bottom" id="BOi-h0-I2X"/>
+                                            <constraint firstItem="EU9-N2-lnh" firstAttribute="leading" secondItem="guh-JP-i9Y" secondAttribute="leading" constant="8" id="IGd-SM-mfe"/>
+                                            <constraint firstItem="qM9-vn-9QZ" firstAttribute="top" secondItem="EU9-N2-lnh" secondAttribute="bottom" constant="8" id="J6u-Ca-K5W"/>
+                                            <constraint firstAttribute="trailing" secondItem="qM9-vn-9QZ" secondAttribute="trailing" id="V0e-CP-vvA"/>
+                                            <constraint firstAttribute="trailing" secondItem="EU9-N2-lnh" secondAttribute="trailing" constant="8" id="jbW-e4-Qad"/>
+                                            <constraint firstItem="EU9-N2-lnh" firstAttribute="top" secondItem="guh-JP-i9Y" secondAttribute="top" constant="8" id="wU5-jQ-rFf"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="guh-JP-i9Y" firstAttribute="trailing" secondItem="gyd-yo-x3k" secondAttribute="trailing" id="4Qn-6m-xEz"/>
+                                    <constraint firstAttribute="trailing" secondItem="gyd-yo-x3k" secondAttribute="trailing" constant="16" id="5Sk-E2-o6v"/>
+                                    <constraint firstItem="gyd-yo-x3k" firstAttribute="leading" secondItem="WqN-KJ-CMd" secondAttribute="leading" constant="16" id="8oT-uk-gYv"/>
+                                    <constraint firstItem="7CW-Pe-9zI" firstAttribute="centerX" secondItem="WqN-KJ-CMd" secondAttribute="centerX" id="Tsh-r9-HrA"/>
+                                    <constraint firstItem="7CW-Pe-9zI" firstAttribute="width" secondItem="WqN-KJ-CMd" secondAttribute="width" multiplier="0.8" id="UCU-5T-nqx"/>
+                                    <constraint firstItem="7CW-Pe-9zI" firstAttribute="centerY" secondItem="WqN-KJ-CMd" secondAttribute="centerY" constant="-32" id="bI8-u0-ic0"/>
+                                    <constraint firstItem="gyd-yo-x3k" firstAttribute="top" secondItem="7CW-Pe-9zI" secondAttribute="bottom" constant="-16" id="hQU-UQ-zM1"/>
+                                    <constraint firstItem="guh-JP-i9Y" firstAttribute="top" secondItem="gyd-yo-x3k" secondAttribute="top" id="ojp-91-nEd"/>
+                                    <constraint firstItem="guh-JP-i9Y" firstAttribute="leading" secondItem="gyd-yo-x3k" secondAttribute="leading" id="qIG-Xx-GjB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -655,7 +730,9 @@
                     <connections>
                         <outlet property="animationContainingView" destination="WqN-KJ-CMd" id="aJt-Em-D3g"/>
                         <outlet property="animationPlayerView" destination="7CW-Pe-9zI" id="1zz-eK-cyp"/>
+                        <outlet property="findingRepsLabel" destination="gyd-yo-x3k" id="YgM-k3-jNI"/>
                         <outlet property="representativesTableView" destination="kh6-5P-upH" id="MwN-58-YIc"/>
+                        <outlet property="retryDownloadView" destination="guh-JP-i9Y" id="0GP-NP-kfA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tqy-n7-Bon" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -15,6 +15,9 @@ import UIKit
 
 class CardViewController: UIViewController {
 
+    @IBOutlet weak var contactingCapitolHillLabel: UILabel!
+    @IBOutlet weak var retryDownloadView: UIView!
+
     @IBOutlet weak var loadingView: UIView! {
         didSet {
             // start up the core location handler lol hackathon code.
@@ -47,17 +50,8 @@ class CardViewController: UIViewController {
             cardCollectionView.dataSource = self
             cardCollectionView.delegate = self
             cardCollectionView.register(Cell.self, forCellWithReuseIdentifier: Cell.description())
-            
-            LincolnLawsServer.shared.getMostRecentBills(successHandler: { (billData) in
-                self.billData = billData
-                DispatchQueue.main.async {
-                    UIView.animate(withDuration: 0.2, animations: {
-                        self.loadingView.alpha = 0
-                    })
-                }
-            }) { (_, _, _) in
-                self.loadingView.backgroundColor = UIColor.red
-            }
+
+            downloadBillData()
         }
     }
 
@@ -76,6 +70,31 @@ class CardViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as?  CardDetailViewController {
             destination.billToDisplay = selectedCell?.billForCard
+        }
+    }
+
+    @IBAction func retryButtonPress(_ sender: Any) {
+        contactingCapitolHillLabel.isHidden = false
+        retryDownloadView.isHidden = true
+        lottieView.play()
+
+        downloadBillData()
+    }
+
+    private func downloadBillData() {
+        LincolnLawsServer.shared.getMostRecentBills(successHandler: { (billData) in
+            self.billData = billData
+            DispatchQueue.main.async {
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.loadingView.alpha = 0
+                })
+            }
+        }) { (_, _, _) in
+            DispatchQueue.main.async {
+                self.lottieView.pause()
+                self.retryDownloadView.isHidden = false
+                self.contactingCapitolHillLabel.isHidden = true
+            }
         }
     }
 }

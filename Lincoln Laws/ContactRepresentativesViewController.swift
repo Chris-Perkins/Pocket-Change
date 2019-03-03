@@ -20,24 +20,15 @@ public class ContactRepresentativesViewController: UIViewController {
         }
     }
 
+    @IBOutlet weak var retryDownloadView: UIView!
+    @IBOutlet weak var findingRepsLabel: UILabel!
+
     private var selectedState: State? {
         didSet {
             guard selectedState != nil else {
                 return
             }
-            if globalHouseMembers == nil {
-                LincolnLawsServer.shared.getHouseMembers(successHandler: { [weak self] (members) in
-                    self?.houseMembers = members.reduce([], { (currResult, membersResult) -> [MemberData] in
-                        var currResult = currResult
-                        currResult.append(contentsOf: membersResult.members)
-                        return currResult
-                    })
-                }) { (data, response, _) in
-                    print("FAIL TO GET MEMBERS")
-                }
-            } else {
-                houseMembers = globalHouseMembers
-            }
+            pullNecessaryData()
         }
     }
 
@@ -69,12 +60,12 @@ public class ContactRepresentativesViewController: UIViewController {
 
     private var locationOfUser: CLLocation? {
         didSet {
-            guard let lastLocation = locationOfUser else {
+            guard locationOfUser != nil else {
                 CoreLocationHandler.shared.locationBoi.delegate = self
                 return
             }
             CoreLocationHandler.shared.locationBoi.delegate = nil
-            updateForLatLonOfUser(from: lastLocation)
+            pullNecessaryData()
         }
     }
 
@@ -83,26 +74,60 @@ public class ContactRepresentativesViewController: UIViewController {
 
         locationOfUser = CoreLocationHandler.shared.locationBoi.location
     }
+    
+    @IBAction func retryButtonPress(_ sender: Any) {
+        findingRepsLabel.isHidden = false
+        retryDownloadView.isHidden = true
+        animationPlayerView.play()
 
-    private func updateForLatLonOfUser(from location: CLLocation) {
-        LincolnLawsServer.shared.getGoogleMapsLocation(lat: location.coordinate.latitude, lon: location.coordinate.longitude, successHandler: { [weak self] (data) in
+        pullNecessaryData()
+    }
 
-            var foundState: State = .unknown
+    private func pullNecessaryData() {
+        if selectedState == nil || selectedState == .unknown {
+            guard let latitude = locationOfUser?.coordinate.latitude, let longitude = locationOfUser?.coordinate.longitude else {
+                return
+            }
+            LincolnLawsServer.shared.getGoogleMapsLocation(lat: latitude, lon: longitude, successHandler: { [weak self] (data) in
+                var foundState: State = .unknown
 
-            for geocodeData in data.results {
-                for addressComponentData in geocodeData.addressComponents {
-                    for addressType in addressComponentData.types {
-                        if addressType == .administrativeAreaLevel1 {
-                            if let data = State(rawValue: addressComponentData.shortName) {
-                                foundState = data
+                for geocodeData in data.results {
+                    for addressComponentData in geocodeData.addressComponents {
+                        for addressType in addressComponentData.types {
+                            if addressType == .administrativeAreaLevel1 {
+                                if let data = State(rawValue: addressComponentData.shortName) {
+                                    foundState = data
+                                }
                             }
                         }
                     }
                 }
+                self?.selectedState = foundState
+            }) { (_, _, _) in
+                DispatchQueue.main.async {
+                    self.findingRepsLabel.isHidden = true
+                    self.retryDownloadView.isHidden = false
+                    self.animationPlayerView.pause()
+                }
             }
-            self?.selectedState = foundState
-        }) { (data, response, error) in
-            print("FAIL")
+        } else {
+            if globalHouseMembers == nil {
+                LincolnLawsServer.shared.getHouseMembers(successHandler: { [weak self] (members) in
+                    self?.houseMembers = members.reduce([], { (currResult, membersResult) -> [MemberData] in
+                        var currResult = currResult
+                        currResult.append(contentsOf: membersResult.members)
+                        return currResult
+                    })
+                }) { (_, _, _) in
+                    DispatchQueue.main.async {
+                        self.findingRepsLabel.isHidden = true
+                        self.retryDownloadView.isHidden = false
+                        self.animationPlayerView.pause()
+                    }
+                }
+            } else {
+                houseMembers = globalHouseMembers
+            }
         }
     }
 }
@@ -127,9 +152,11 @@ extension ContactRepresentativesViewController: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "representativeCell") as! RepresentativeCell
-        cell.nameLabel.text = "\(stateMembers![indexPath.row].firstName) \(stateMembers![indexPath.row].lastName)"
+        let stateMember = stateMembers![indexPath.row]
+        cell.nameLabel.text = "\(stateMember.firstName) \(stateMember.lastName)"
+        cell.facebookButton.isEnabled = stateMember.facebookId != nil
+        cell.twitterButton.isEnabled = stateMember.twitterId != nil
+        cell.urlButton.isEnabled = stateMember.url != nil
         return cell
     }
-
-
 }
