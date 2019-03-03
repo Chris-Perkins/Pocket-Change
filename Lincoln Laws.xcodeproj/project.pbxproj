@@ -15,6 +15,8 @@
 		22518E5D222B959E00BF740B /* GeocodeResultsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22518E5C222B959E00BF740B /* GeocodeResultsData.swift */; };
 		22518E5F222B95AF00BF740B /* GeocodeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22518E5E222B95AF00BF740B /* GeocodeResult.swift */; };
 		22518E61222B95DA00BF740B /* GeoCodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22518E60222B95DA00BF740B /* GeoCodeType.swift */; };
+		22518E65222B9FE900BF740B /* MemberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22518E64222B9FE900BF740B /* MemberData.swift */; };
+		22518E69222BA12500BF740B /* GetMembersResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22518E68222BA12500BF740B /* GetMembersResult.swift */; };
 		228D6EC2222A51E5009F8826 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6EC1222A51E5009F8826 /* Cell.swift */; };
 		228D6EC5222A59EF009F8826 /* NSLayoutConstraintsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6EC4222A59EF009F8826 /* NSLayoutConstraintsExtensions.swift */; };
 		228D6EC7222A5F25009F8826 /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6EC6222A5F25009F8826 /* PictureCell.swift */; };
@@ -53,6 +55,8 @@
 		22518E5C222B959E00BF740B /* GeocodeResultsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeResultsData.swift; sourceTree = "<group>"; };
 		22518E5E222B95AF00BF740B /* GeocodeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeResult.swift; sourceTree = "<group>"; };
 		22518E60222B95DA00BF740B /* GeoCodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCodeType.swift; sourceTree = "<group>"; };
+		22518E64222B9FE900BF740B /* MemberData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberData.swift; sourceTree = "<group>"; };
+		22518E68222BA12500BF740B /* GetMembersResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMembersResult.swift; sourceTree = "<group>"; };
 		228D6EC1222A51E5009F8826 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		228D6EC4222A59EF009F8826 /* NSLayoutConstraintsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintsExtensions.swift; sourceTree = "<group>"; };
 		228D6EC6222A5F25009F8826 /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
@@ -98,6 +102,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22518E62222B9FCA00BF740B /* GeoCode Data */ = {
+			isa = PBXGroup;
+			children = (
+				22518E5A222B958000BF740B /* GeoCodeData.swift */,
+				22518E5C222B959E00BF740B /* GeocodeResultsData.swift */,
+				22518E5E222B95AF00BF740B /* GeocodeResult.swift */,
+				22518E60222B95DA00BF740B /* GeoCodeType.swift */,
+			);
+			path = "GeoCode Data";
+			sourceTree = "<group>";
+		};
+		22518E63222B9FD900BF740B /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				22518E68222BA12500BF740B /* GetMembersResult.swift */,
+				22518E64222B9FE900BF740B /* MemberData.swift */,
+			);
+			path = Member;
+			sourceTree = "<group>";
+		};
 		228D6EC3222A59DE009F8826 /* ClingConstraintsHelpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +157,8 @@
 		228D6EEF222B07AF009F8826 /* Data Types */ = {
 			isa = PBXGroup;
 			children = (
+				22518E63222B9FD900BF740B /* Member */,
+				22518E62222B9FCA00BF740B /* GeoCode Data */,
 				228D6EED222AF974009F8826 /* State.swift */,
 				228D6EF4222B110C009F8826 /* MostRecentBillData.swift */,
 				228D6EF0222B07BE009F8826 /* Bill.swift */,
@@ -140,10 +166,6 @@
 				228D6EF6222B1451009F8826 /* Chamber.swift */,
 				228D6F06222B3F9D009F8826 /* BillFullTextData.swift */,
 				228D6F08222B434D009F8826 /* GlobalMostRecentBillData.swift */,
-				22518E5A222B958000BF740B /* GeoCodeData.swift */,
-				22518E5C222B959E00BF740B /* GeocodeResultsData.swift */,
-				22518E5E222B95AF00BF740B /* GeocodeResult.swift */,
-				22518E60222B95DA00BF740B /* GeoCodeType.swift */,
 			);
 			path = "Data Types";
 			sourceTree = "<group>";
@@ -348,11 +370,13 @@
 				228D6EF5222B110C009F8826 /* MostRecentBillData.swift in Sources */,
 				228D6EF1222B07BE009F8826 /* Bill.swift in Sources */,
 				22F62BF2222A3D62001D192F /* CardViewController.swift in Sources */,
+				22518E69222BA12500BF740B /* GetMembersResult.swift in Sources */,
 				22518E61222B95DA00BF740B /* GeoCodeType.swift in Sources */,
 				228D6F07222B3F9D009F8826 /* BillFullTextData.swift in Sources */,
 				228D6EF7222B1451009F8826 /* Chamber.swift in Sources */,
 				228D6EF9222B21B5009F8826 /* GradientView.swift in Sources */,
 				228D6EC5222A59EF009F8826 /* NSLayoutConstraintsExtensions.swift in Sources */,
+				22518E65222B9FE900BF740B /* MemberData.swift in Sources */,
 				22518E5F222B95AF00BF740B /* GeocodeResult.swift in Sources */,
 				22117668222B714600ACCD40 /* CoreLocationHandler.swift in Sources */,
 				2211766C222B821B00ACCD40 /* ContactRepresentativesViewController.swift in Sources */,

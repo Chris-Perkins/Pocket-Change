@@ -20,6 +20,8 @@ public class LincolnLawsServer {
 
         public static let getFullTextUrl = "\(baseEndPointString)/fulltext/{0}/{1}/"
 
+        public static let getMembersUrl = URL(string: "\(baseEndPointString)/members")!
+
         public static let getGoogleMapsLocationUrlString = "https://maps.googleapis.com/maps/api/geocode/json?latlng={0},{1}&key=\(LincolnLawsServer.googleMapsAPIKey)"
     }
 
@@ -84,6 +86,25 @@ public class LincolnLawsServer {
         
         URLSession.shared.dataTask(with: request) {data,response,error in
             guard let nonNilData = data, let returnedData = try? self.objectDecoder.decode(GeocodeData.self, from: nonNilData)  else {
+                failureHandler(data, response, error)
+                return
+            }
+            // Timer doesn't fire if not in main for a reason idk
+            DispatchQueue.main.async {
+                Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+                    successHandler(returnedData)
+                }
+            }
+        }.resume()
+    }
+
+    func getHouseMembers(successHandler: @escaping ([GetMembersResult]) -> Void,
+                         failureHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        var request = URLRequest(url: EndPoints.getMembersUrl)
+        request.timeoutInterval = 60
+
+        URLSession.shared.dataTask(with: request) {data,response,error in
+            guard let nonNilData = data, let returnedData = try? self.objectDecoder.decode([GetMembersResult].self, from: nonNilData)  else {
                 failureHandler(data, response, error)
                 return
             }

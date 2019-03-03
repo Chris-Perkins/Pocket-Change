@@ -21,7 +21,31 @@ public class ContactRepresentativesViewController: UIViewController {
 
     private var selectedState: State? {
         didSet {
+            guard selectedState != nil else {
+                return
+            }
+            LincolnLawsServer.shared.getHouseMembers(successHandler: { (members) in
+                self.houseMembers = members.reduce([], { (currResult, membersResult) -> [MemberData] in
+                    var currResult = currResult
+                    currResult.append(contentsOf: membersResult.members)
+                    return currResult
+                })
+            }) { (data, response, _) in
+                print("FAIL")
+            }
+        }
+    }
 
+    private var houseMembers: [MemberData]? {
+        didSet {
+            // We can only get here if state is not nil
+            let members = houseMembers?.filter { $0.state == selectedState! }
+            guard let knownMembers = members else {
+                return
+            }
+            print(knownMembers.map({ (member) -> String in
+                return "\(member.firstName) \(member.lastName)"
+            }))
         }
     }
 
@@ -66,7 +90,7 @@ public class ContactRepresentativesViewController: UIViewController {
             }
             self.selectedState = foundState
         }) { (data, response, error) in
-            print(data, response, error)
+            print("FAIL")
         }
     }
 }
