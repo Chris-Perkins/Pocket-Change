@@ -22,6 +22,7 @@ public class CellCard: MDCCard {
     public var billForCard: Bill? {
         didSet {
             titleLabel.text = billForCard?.shortTitle
+            billClassificationCollectionView.reloadData()
         }
     }
 
@@ -74,7 +75,7 @@ public class CellCard: MDCCard {
         fatalError("Nope!")
     }
 
-    private func getBillImageNames() -> [String] {
+    public func getBillImageNames() -> [String] {
         guard let bill = billForCard else {
             return []
         }

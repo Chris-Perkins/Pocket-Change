@@ -174,7 +174,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="T2X-BM-bvg">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="880.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="912.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lDP-2p-ZEu" userLabel="card sim view">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="425.5"/>
@@ -447,6 +447,13 @@
                                                     <constraint firstItem="C2a-c8-XIu" firstAttribute="leading" secondItem="efk-ll-T1Y" secondAttribute="leading" constant="16" id="rh6-GA-CMR"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oXA-Rh-yGn">
+                                                <rect key="frame" x="0.0" y="880.5" width="375" height="32"/>
+                                                <color key="backgroundColor" red="0.1450980392" green="0.2274509804" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="6mp-nT-EfQ"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -570,7 +577,7 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="3"/>
+                                                <integer key="value" value="18"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
