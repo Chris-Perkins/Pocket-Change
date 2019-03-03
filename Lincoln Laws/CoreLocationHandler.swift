@@ -12,6 +12,7 @@ class CoreLocationHandler: NSObject {
 
     public lazy var locationBoi: CLLocationManager = {
         let manager = CLLocationManager()
+        manager.requestWhenInUseAuthorization()
         manager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         manager.allowsBackgroundLocationUpdates = false
         manager.startUpdatingLocation()

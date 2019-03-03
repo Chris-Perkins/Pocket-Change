@@ -77,20 +77,20 @@ public class LincolnLawsServer {
         }.resume()
     }
 
-    func getGoogleMapsLocation(lat: Double, lon: Double, successHandler: @escaping () -> Void,
+    func getGoogleMapsLocation(lat: Double, lon: Double, successHandler: @escaping (GeocodeData) -> Void,
                                failureHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
         var request = URLRequest(url: URL(string: EndPoints.getGoogleMapsLocationUrlString.replacingOccurrences(of: "{1}", with: "\(lon)").replacingOccurrences(of: "{0}", with: "\(lat)"))!)
         request.timeoutInterval = 10
         
         URLSession.shared.dataTask(with: request) {data,response,error in
-            guard let nonNilData = data, let returnedData = try? self.objectDecoder.decode(BillFullTextData.self, from: nonNilData)  else {
+            guard let nonNilData = data, let returnedData = try? self.objectDecoder.decode(GeocodeData.self, from: nonNilData)  else {
                 failureHandler(data, response, error)
                 return
             }
             // Timer doesn't fire if not in main for a reason idk
             DispatchQueue.main.async {
                 Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
-                    successHandler()
+                    successHandler(returnedData)
                 }
             }
         }.resume()

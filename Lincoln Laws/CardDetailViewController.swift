@@ -159,9 +159,3 @@ public class CardDetailViewController: UIViewController {
         }
     }
 }
-
-extension CardDetailViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        // do something here probably lol.
-    }
-}

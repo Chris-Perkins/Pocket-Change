@@ -64,6 +64,7 @@ public enum State: String, Codable {
     case tennessee = "TN"
     case texas = "TX"
     case utah = "UT"
+    case unknown
     case vermont = "VT"
     case virginIslands = "VI"
     case virginia = "VA"
