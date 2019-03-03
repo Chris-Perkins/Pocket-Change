@@ -54,9 +54,7 @@ public class LincolnLawsServer {
             retrievedMostRecentBillData = returnedData
             // Timer doesn't fire if not in main for a reason idk
             DispatchQueue.main.async {
-                Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
-                    successHandler(returnedData)
-                }
+                successHandler(returnedData)
             }
         }.resume()
     }
@@ -73,6 +71,7 @@ public class LincolnLawsServer {
             // Timer doesn't fire if not in main for a reason idk
             DispatchQueue.main.async {
                 Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+                    print(returnedData)
                     successHandler(returnedData)
                 }
             }
