@@ -18,8 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Q3k-si-1nX">
-                                <rect key="frame" x="166" y="326" width="42" height="18"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="NY9-ah-mxn">
+                                <rect key="frame" x="112.5" y="147.5" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NY9-ah-mxn" secondAttribute="height" multiplier="1:1" id="eYV-sd-KMa"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Q3k-si-1nX">
+                                <rect key="frame" x="0.0" y="313.5" width="375" height="60.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="KnightHacks 2019">
                                         <attributes>
@@ -45,8 +51,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Q3k-si-1nX" firstAttribute="top" secondItem="NY9-ah-mxn" secondAttribute="bottom" constant="16" id="6RL-0W-3DT"/>
+                            <constraint firstItem="NY9-ah-mxn" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="I33-WI-3kT"/>
                             <constraint firstItem="Q3k-si-1nX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ROk-9Z-diK"/>
-                            <constraint firstItem="Q3k-si-1nX" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="f0b-uD-RdC"/>
+                            <constraint firstItem="NY9-ah-mxn" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.4" id="irr-2P-H0w"/>
                             <constraint firstItem="Q3k-si-1nX" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="j84-ZL-vxc"/>
                             <constraint firstItem="Q3k-si-1nX" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="oNq-ia-2G1"/>
                         </constraints>
@@ -58,4 +66,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon" width="40" height="40"/>
+    </resources>
 </document>

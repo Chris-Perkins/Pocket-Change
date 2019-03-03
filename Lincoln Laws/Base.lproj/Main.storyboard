@@ -645,7 +645,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="STT-Hj-sO4">
                                                             <rect key="frame" x="203.5" y="8" width="163.5" height="41.5"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGr-MI-fuW">
+                                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGr-MI-fuW">
                                                                     <rect key="frame" x="0.0" y="0.0" width="53" height="41.5"/>
                                                                     <color key="backgroundColor" red="0.24699999389999999" green="0.31799998880000002" blue="0.70999997849999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <state key="normal" image="url">
@@ -660,7 +660,7 @@
                                                                         <action selector="genericUrlPressed:" destination="1FJ-Us-mFO" eventType="touchUpInside" id="id6-YU-SZT"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvT-gq-BmO">
+                                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvT-gq-BmO">
                                                                     <rect key="frame" x="55" y="0.0" width="53.5" height="41.5"/>
                                                                     <color key="backgroundColor" red="0.24699999389999999" green="0.31799998880000002" blue="0.70999997849999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <state key="normal" image="facebook">
@@ -675,7 +675,7 @@
                                                                         <action selector="facebookButtonPress:" destination="1FJ-Us-mFO" eventType="touchUpInside" id="Uqs-1e-WEx"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJE-dw-bXA">
+                                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJE-dw-bXA">
                                                                     <rect key="frame" x="110.5" y="0.0" width="53" height="41.5"/>
                                                                     <color key="backgroundColor" red="0.24699999389999999" green="0.31799998880000002" blue="0.70999997849999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <state key="normal" image="twitter">
