@@ -152,11 +152,7 @@ extension ContactRepresentativesViewController: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "representativeCell") as! RepresentativeCell
-        let stateMember = stateMembers![indexPath.row]
-        cell.nameLabel.text = "\(stateMember.firstName) \(stateMember.lastName)"
-        cell.facebookButton.isEnabled = stateMember.facebookId != nil
-        cell.twitterButton.isEnabled = stateMember.twitterId != nil
-        cell.urlButton.isEnabled = stateMember.url != nil
+        cell.memberInfo = stateMembers![indexPath.row]
         return cell
     }
 }
