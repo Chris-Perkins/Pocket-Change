@@ -20,6 +20,7 @@ public class ContactRepresentativesViewController: UIViewController {
         }
     }
 
+    @IBOutlet weak var stateNameLabel: UILabel!
     @IBOutlet weak var retryDownloadView: UIView!
     @IBOutlet weak var findingRepsLabel: UILabel!
 
@@ -28,6 +29,7 @@ public class ContactRepresentativesViewController: UIViewController {
             guard selectedState != nil else {
                 return
             }
+            stateNameLabel.text = "\(selectedState ?? .unknown)"
             pullNecessaryData()
         }
     }

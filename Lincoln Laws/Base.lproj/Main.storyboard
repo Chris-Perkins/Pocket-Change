@@ -593,17 +593,28 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiO-3Z-OGx">
-                                                <rect key="frame" x="8" y="8" width="79.5" height="48"/>
+                                                <rect key="frame" x="8" y="8" width="187.5" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQK-Cr-5vt">
+                                                <rect key="frame" x="203.5" y="8" width="163.5" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="HQK-Cr-5vt" secondAttribute="bottom" constant="8" id="AKE-8j-gyr"/>
+                                            <constraint firstAttribute="trailing" secondItem="HQK-Cr-5vt" secondAttribute="trailing" constant="8" id="Goi-2e-fLw"/>
+                                            <constraint firstItem="HQK-Cr-5vt" firstAttribute="top" secondItem="nE4-JO-yHW" secondAttribute="top" constant="8" id="LST-cK-fpo"/>
                                             <constraint firstItem="eiO-3Z-OGx" firstAttribute="top" secondItem="nE4-JO-yHW" secondAttribute="top" constant="8" id="Qxh-oR-MtY"/>
                                             <constraint firstAttribute="bottom" secondItem="eiO-3Z-OGx" secondAttribute="bottom" constant="8" id="iRU-ay-aJ9"/>
                                             <constraint firstAttribute="height" constant="64" id="kJP-Ff-sqJ"/>
+                                            <constraint firstItem="eiO-3Z-OGx" firstAttribute="width" secondItem="nE4-JO-yHW" secondAttribute="width" multiplier="0.5" id="pSH-T0-6bQ"/>
+                                            <constraint firstItem="HQK-Cr-5vt" firstAttribute="leading" secondItem="eiO-3Z-OGx" secondAttribute="trailing" constant="8" id="qBH-Bx-6Ts"/>
                                             <constraint firstItem="eiO-3Z-OGx" firstAttribute="leading" secondItem="nE4-JO-yHW" secondAttribute="leading" constant="8" id="y9n-Ed-lTf"/>
                                         </constraints>
                                     </view>
@@ -773,6 +784,7 @@
                         <outlet property="findingRepsLabel" destination="gyd-yo-x3k" id="YgM-k3-jNI"/>
                         <outlet property="representativesTableView" destination="kh6-5P-upH" id="MwN-58-YIc"/>
                         <outlet property="retryDownloadView" destination="guh-JP-i9Y" id="0GP-NP-kfA"/>
+                        <outlet property="stateNameLabel" destination="HQK-Cr-5vt" id="Nqo-x4-bXR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tqy-n7-Bon" userLabel="First Responder" sceneMemberID="firstResponder"/>
