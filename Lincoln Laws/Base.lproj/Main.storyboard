@@ -769,6 +769,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bill" width="48" height="48"/>
+        <image name="bill" width="64" height="64"/>
     </resources>
 </document>
