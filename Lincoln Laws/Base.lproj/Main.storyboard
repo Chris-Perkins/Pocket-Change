@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Card View Controller-->
+        <!--Favorites-->
         <scene sceneID="fI3-aW-9KK">
             <objects>
                 <viewController id="avC-u0-kI8" customClass="CardViewController" customModule="Lincoln_Laws" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,7 +20,7 @@
                         <color key="backgroundColor" red="1" green="0.94117647058823528" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="8OK-Mo-0Ou"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="HL1-h5-TUu"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star" id="HL1-h5-TUu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VGP-G7-Zfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -845,6 +845,7 @@
     <resources>
         <image name="bill" width="64" height="64"/>
         <image name="facebook" width="128" height="128"/>
+        <image name="star" width="128" height="128"/>
         <image name="twitter" width="128" height="128"/>
         <image name="url" width="128" height="128"/>
     </resources>
