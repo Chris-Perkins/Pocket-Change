@@ -31,7 +31,23 @@ public struct Bill: Codable {
     let shortTitle: String
     let billType: String
 
+    let tagEconomy: Bool
+    let tagDA: Bool
+    let tagFA: Bool
+    let tagEnvironment: Bool
+    let tagDefense: Bool
+
+    let keywords: [String]?
+
     enum CodingKeys: String, CodingKey {
+        case tagEconomy = "tag_economy"
+        case tagDA = "tag_da"
+        case tagFA = "tag_fa"
+        case tagEnvironment = "tag_environment"
+        case tagDefense = "tag_defense"
+
+        case keywords = "google_tags"
+
         case billId = "bill_id"
         case sponsorUri = "sponsor_uri"
         case billSlug = "bill_slug"
