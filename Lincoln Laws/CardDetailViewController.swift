@@ -30,12 +30,27 @@ public class CardDetailViewController: UIViewController {
         }
     }
 
+    @IBOutlet weak var collectionView: UICollectionView! {
+        didSet {
+            collectionView.delegate = self
+            collectionView.dataSource = self
+            collectionView.register(PictureCell.self, forCellWithReuseIdentifier: PictureCell.description())
+        }
+    }
+    @IBOutlet weak var collectionContainer: UIView! {
+        didSet {
+            collectionContainer?.isHidden = getBillImageNames().isEmpty
+        }
+    }
+
     public var billToDisplay: Bill? {
         didSet {
             guard let bill = billToDisplay else {
                 partySponsorLottieView?.animation = nil
                 return
             }
+            collectionContainer?.isHidden = getBillImageNames().isEmpty
+            
             if bill.sponsorParty == .democrat {
                 partySponsorLottieView?.setAnimation(named: "republican")
                 sponsorLabel?.text = "Sponsoring Party: Republican"
@@ -156,5 +171,50 @@ public class CardDetailViewController: UIViewController {
                 partySponsorLottieView?.setAnimation(named: "democrat")
             }
         }
+    }
+
+    private func getBillImageNames() -> [String] {
+        guard let bill = billToDisplay else {
+            return []
+        }
+
+        var currentBillImages = [String]()
+        if bill.tagEnvironment {
+            currentBillImages.append("leaf")
+        }
+        if bill.tagDA {
+            currentBillImages.append("house")
+        }
+        if bill.tagFA {
+            currentBillImages.append("globe")
+        }
+        if bill.tagDefense {
+            currentBillImages.append("shield")
+        }
+        if bill.tagEconomy {
+            currentBillImages.append("dollar")
+        }
+        return currentBillImages
+    }
+}
+
+extension CardDetailViewController: UICollectionViewDataSource {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return getBillImageNames().count
+    }
+
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PictureCell.description(), for: indexPath) as! PictureCell
+        cell.lottieView.setAnimation(named: getBillImageNames()[indexPath.row])
+        return cell
+    }
+}
+
+extension CardDetailViewController: UICollectionViewDelegate {
+}
+
+extension CardDetailViewController: UICollectionViewDelegateFlowLayout {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 32, height: 32)
     }
 }

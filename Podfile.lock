@@ -21,6 +21,7 @@ PODS:
   - MaterialComponents/Shapes (77.0.0):
     - MaterialComponents/private/Math
     - MaterialComponents/ShadowLayer
+  - WSTagsField (4.1.0)
 
 DEPENDENCIES:
   - ClingConstraints
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - lottie-ios
   - MagazineLayout (~> 1.2.1)
   - MaterialComponents/Cards
+  - WSTagsField
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -36,6 +38,7 @@ SPEC REPOS:
     - lottie-ios
     - MagazineLayout
     - MaterialComponents
+    - WSTagsField
 
 SPEC CHECKSUMS:
   ClingConstraints: db6e34c17384e0f73ed9af3206020cac929ec40c
@@ -43,7 +46,8 @@ SPEC CHECKSUMS:
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
   MagazineLayout: cd9cb2174bcf1c349d8286390c7f9716e4ef40b9
   MaterialComponents: 1dc805d52502bd9d5692c2ffcc8a169c8b65b916
+  WSTagsField: 269da4be929d8945adf7195e3822b70826c1c1a4
 
-PODFILE CHECKSUM: 6939f989e7ea464892a02341c40ac996412a6bb7
+PODFILE CHECKSUM: 4a9db74898e212eecf9ed009b73c3470f84d334e
 
 COCOAPODS: 1.5.3

@@ -174,7 +174,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="T2X-BM-bvg">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="767.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="815.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lDP-2p-ZEu" userLabel="card sim view">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="425.5"/>
@@ -239,14 +239,14 @@
                                                     <constraint firstAttribute="bottom" secondItem="bYQ-4X-DTd" secondAttribute="bottom" constant="8" id="vHy-Kc-sIr"/>
                                                 </constraints>
                                             </view>
-                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bo-15-Jy5" userLabel="collection container">
-                                                <rect key="frame" x="0.0" y="489.5" width="375" height="61"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bo-15-Jy5" userLabel="collection container">
+                                                <rect key="frame" x="0.0" y="489.5" width="375" height="48"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uth-Uj-TgQ">
-                                                        <rect key="frame" x="8" y="8" width="359" height="45"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <rect key="frame" x="8" y="8" width="359" height="32"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="45" id="a6d-ea-fPA"/>
+                                                            <constraint firstAttribute="height" constant="32" id="a6d-ea-fPA"/>
                                                         </constraints>
                                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="w6K-Gr-bA2">
                                                             <size key="itemSize" width="50" height="50"/>
@@ -268,7 +268,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.1450980392" green="0.2274509804" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="61" id="Wbh-UY-B8K"/>
+                                                    <constraint firstAttribute="height" constant="48" id="Wbh-UY-B8K"/>
                                                     <constraint firstAttribute="trailing" secondItem="uth-Uj-TgQ" secondAttribute="trailing" constant="8" id="lGt-5S-5tC"/>
                                                     <constraint firstItem="uth-Uj-TgQ" firstAttribute="leading" secondItem="7bo-15-Jy5" secondAttribute="leading" constant="8" id="sLl-2s-3vD"/>
                                                     <constraint firstAttribute="bottom" secondItem="uth-Uj-TgQ" secondAttribute="bottom" constant="8" id="ums-fA-F3i"/>
@@ -276,7 +276,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SQk-wv-MMD">
-                                                <rect key="frame" x="0.0" y="489.5" width="375" height="150"/>
+                                                <rect key="frame" x="0.0" y="537.5" width="375" height="150"/>
                                                 <subviews>
                                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="0GM-oG-cfP" customClass="LOTAnimationView">
                                                         <rect key="frame" x="133.5" y="6" width="118" height="118"/>
@@ -298,7 +298,7 @@
                                                 </constraints>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cru-3l-9By" userLabel="description">
-                                                <rect key="frame" x="0.0" y="639.5" width="375" height="77"/>
+                                                <rect key="frame" x="0.0" y="687.5" width="375" height="77"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tol-do-8Ot">
                                                         <rect key="frame" x="8" y="8" width="359" height="0.0"/>
@@ -355,7 +355,7 @@
                                                 </constraints>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNF-vT-rl7" userLabel="summary container">
-                                                <rect key="frame" x="0.0" y="639.5" width="375" height="24"/>
+                                                <rect key="frame" x="0.0" y="687.5" width="375" height="24"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fnm-O3-09w">
                                                         <rect key="frame" x="8" y="8" width="79" height="0.0"/>
@@ -382,7 +382,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efk-ll-T1Y">
-                                                <rect key="frame" x="0.0" y="639.5" width="375" height="128"/>
+                                                <rect key="frame" x="0.0" y="687.5" width="375" height="128"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Want to share your thoughts on this bill?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPZ-81-gfp">
                                                         <rect key="frame" x="8" y="16" width="359" height="61"/>
@@ -491,6 +491,8 @@
                     <connections>
                         <outlet property="animationViewContainer" destination="bYQ-4X-DTd" id="If1-0T-tDo"/>
                         <outlet property="closeButton" destination="XqH-5Q-1Gt" id="cLh-Hc-Loa"/>
+                        <outlet property="collectionContainer" destination="7bo-15-Jy5" id="NAb-I9-uH2"/>
+                        <outlet property="collectionView" destination="uth-Uj-TgQ" id="Z6C-JM-HtN"/>
                         <outlet property="descriptionContainer" destination="cru-3l-9By" id="cjn-K8-lYy"/>
                         <outlet property="descriptionLabel" destination="fqO-uA-cWf" id="IS4-Qo-8wN"/>
                         <outlet property="loadingAnimationView" destination="0GM-oG-cfP" id="x7e-Hx-wm2"/>

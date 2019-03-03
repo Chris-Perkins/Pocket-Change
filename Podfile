@@ -11,5 +11,6 @@ target 'Lincoln Laws' do
   pod 'ClingConstraints'
   pod 'Hero'
   pod 'lottie-ios'
+  pod 'WSTagsField'
 
 end
