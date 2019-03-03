@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22117668222B714600ACCD40 /* CoreLocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22117667222B714600ACCD40 /* CoreLocationHandler.swift */; };
 		228D6EC2222A51E5009F8826 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6EC1222A51E5009F8826 /* Cell.swift */; };
 		228D6EC5222A59EF009F8826 /* NSLayoutConstraintsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6EC4222A59EF009F8826 /* NSLayoutConstraintsExtensions.swift */; };
 		228D6EC7222A5F25009F8826 /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D6EC6222A5F25009F8826 /* PictureCell.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22117667222B714600ACCD40 /* CoreLocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationHandler.swift; sourceTree = "<group>"; };
 		228D6EC1222A51E5009F8826 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		228D6EC4222A59EF009F8826 /* NSLayoutConstraintsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintsExtensions.swift; sourceTree = "<group>"; };
 		228D6EC6222A5F25009F8826 /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				22F62BF6222A3D62001D192F /* Assets.xcassets */,
 				22F62BF8222A3D62001D192F /* LaunchScreen.storyboard */,
 				22F62BFB222A3D62001D192F /* Info.plist */,
+				22117667222B714600ACCD40 /* CoreLocationHandler.swift */,
 			);
 			path = "Lincoln Laws";
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				228D6EF7222B1451009F8826 /* Chamber.swift in Sources */,
 				228D6EF9222B21B5009F8826 /* GradientView.swift in Sources */,
 				228D6EC5222A59EF009F8826 /* NSLayoutConstraintsExtensions.swift in Sources */,
+				22117668222B714600ACCD40 /* CoreLocationHandler.swift in Sources */,
 				228D6EEE222AF974009F8826 /* State.swift in Sources */,
 				228D6EC7222A5F25009F8826 /* PictureCell.swift in Sources */,
 				228D6ECE222AD534009F8826 /* CellCard.swift in Sources */,

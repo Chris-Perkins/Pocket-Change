@@ -14,7 +14,14 @@ public class CardDetailViewController: UIViewController {
     @IBOutlet weak var loadingContainerView: UIView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var descriptionContainer: UIView!
-
+    @IBOutlet weak var noSummaryAvailableLabel: UILabel! {
+        didSet {
+            if let summary = billToDisplay?.summary {
+                noSummaryAvailableLabel?.text = summary
+            }
+        }
+    }
+    @IBOutlet weak var summaryContainer: UIView!
     @IBOutlet weak var loadingAnimationView: LOTAnimationView! {
         didSet {
             loadingAnimationView.loopAnimation = true
@@ -35,14 +42,18 @@ public class CardDetailViewController: UIViewController {
                 partySponsorLottieView?.setAnimation(named: "democrat")
                 sponsorLabel?.text = "Sponsoring Party: Democrat"
             }
-            titleLabel?.text = bill.title
-            descriptionLabel?.text = bill.billId
+            titleLabel?.text = bill.shortTitle
+            descriptionLabel?.text = bill.title
+
+            if let summary = billToDisplay?.summary {
+                noSummaryAvailableLabel?.text = summary
+            }
 
             LincolnLawsServer.shared.getFullText(bill: bill, successHandler: { (fulldata) in
                 self.billFullText = fulldata
             }) { (_, _, _) in
-                print("Fail")
-                return
+                print(":!:!:")
+                self.billFullText = nil
             }
         }
     }
@@ -50,9 +61,14 @@ public class CardDetailViewController: UIViewController {
     public var billFullText: BillFullTextData? {
         didSet {
             DispatchQueue.main.async {
+                print(self.billFullText)
                 UIView.animate(withDuration: 0.2, animations: {
+                    if (self.billFullText?.preamble ?? "").isEmpty && (self.billFullText?.resolutionBody ?? "").isEmpty {
+                        self.summaryContainer.isHidden = false
+                    } else {
+                        self.descriptionContainer.isHidden = false
+                    }
                     self.loadingContainerView.isHidden = true
-                    self.descriptionContainer.isHidden = false
                     self.stackView.layoutIfNeeded()
                 })
                 self.preambleText?.text = self.billFullText?.preamble
@@ -77,7 +93,7 @@ public class CardDetailViewController: UIViewController {
                 partySponsorLottieView?.animation = nil
                 return
             }
-            titleLabel?.text = bill.title
+            titleLabel?.text = bill.shortTitle
         }
     }
 
@@ -86,7 +102,7 @@ public class CardDetailViewController: UIViewController {
             guard let bill = billToDisplay else {
                 return
             }
-            descriptionLabel?.text = bill.billId
+            descriptionLabel?.text = bill.title
         }
     }
 

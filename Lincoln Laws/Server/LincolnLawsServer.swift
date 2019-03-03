@@ -10,12 +10,17 @@ import Foundation
 
 public class LincolnLawsServer {
 
+    // TODO: Revoke this token upon publication of the application.
+    private static let googleMapsAPIKey = "AIzaSyAX4125JLvkKQtTO9uQmS1ztFtDyCOa6Cg"
+
     private struct EndPoints {
         private static let baseEndPointString = "http://34.73.177.91:5010"
 
         public static let mostRecentUrl = URL(string: "\(baseEndPointString)/recent")!
 
         public static let getFullTextUrl = "\(baseEndPointString)/fulltext/{0}/{1}/"
+
+        public static let getGoogleMapsLocationUrlString = "https://maps.googleapis.com/maps/api/geocode/json?latlng={0},{1}&key=\(LincolnLawsServer.googleMapsAPIKey)"
     }
 
     public enum RecentBillsResult {
@@ -65,8 +70,27 @@ public class LincolnLawsServer {
             }
             // Timer doesn't fire if not in main for a reason idk
             DispatchQueue.main.async {
-                Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+                Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
                     successHandler(returnedData)
+                }
+            }
+        }.resume()
+    }
+
+    func getGoogleMapsLocation(lat: Double, lon: Double, successHandler: @escaping () -> Void,
+                               failureHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        var request = URLRequest(url: URL(string: EndPoints.getGoogleMapsLocationUrlString.replacingOccurrences(of: "{1}", with: "\(lon)").replacingOccurrences(of: "{0}", with: "\(lat)"))!)
+        request.timeoutInterval = 10
+        
+        URLSession.shared.dataTask(with: request) {data,response,error in
+            guard let nonNilData = data, let returnedData = try? self.objectDecoder.decode(BillFullTextData.self, from: nonNilData)  else {
+                failureHandler(data, response, error)
+                return
+            }
+            // Timer doesn't fire if not in main for a reason idk
+            DispatchQueue.main.async {
+                Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+                    successHandler()
                 }
             }
         }.resume()
