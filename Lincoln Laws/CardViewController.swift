@@ -15,7 +15,12 @@ import UIKit
 
 class CardViewController: UIViewController {
 
-    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var loadingView: UIView! {
+        didSet {
+            // start up the core location handler lol hackathon code.
+            _ = CoreLocationHandler.shared
+        }
+    }
 
     private var billData: MostRecentBillData? {
         didSet {

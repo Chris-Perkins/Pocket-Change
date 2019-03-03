@@ -136,7 +136,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="T2X-BM-bvg">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="639.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="767.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lDP-2p-ZEu" userLabel="card sim view">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="425.5"/>
@@ -341,6 +341,42 @@
                                                     <constraint firstItem="Fnm-O3-09w" firstAttribute="leading" secondItem="bNF-vT-rl7" secondAttribute="leading" constant="8" id="cnO-4V-nmm"/>
                                                     <constraint firstItem="hKg-RH-oQd" firstAttribute="top" secondItem="Fnm-O3-09w" secondAttribute="bottom" constant="8" id="qhW-gc-9Ie"/>
                                                     <constraint firstAttribute="trailing" secondItem="hKg-RH-oQd" secondAttribute="trailing" constant="16" id="shC-ln-Bg6"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efk-ll-T1Y">
+                                                <rect key="frame" x="0.0" y="639.5" width="375" height="128"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Want to share your thoughts on this bill?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPZ-81-gfp">
+                                                        <rect key="frame" x="8" y="16" width="359" height="61"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2a-c8-XIu">
+                                                        <rect key="frame" x="16" y="85" width="343" height="35"/>
+                                                        <color key="backgroundColor" red="0.24699999389999999" green="0.31799998880000002" blue="0.70999997849999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="Gw5-0i-Tbx"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Contact your Representatives">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.1450980392" green="0.2274509804" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="C2a-c8-XIu" firstAttribute="top" secondItem="gPZ-81-gfp" secondAttribute="bottom" constant="8" id="2pO-Xp-KMI"/>
+                                                    <constraint firstItem="gPZ-81-gfp" firstAttribute="leading" secondItem="efk-ll-T1Y" secondAttribute="leading" constant="8" id="FkZ-br-JZt"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gPZ-81-gfp" secondAttribute="trailing" constant="8" id="Wzn-ZY-84N"/>
+                                                    <constraint firstItem="gPZ-81-gfp" firstAttribute="top" secondItem="efk-ll-T1Y" secondAttribute="top" constant="16" id="ahv-I0-A0n"/>
+                                                    <constraint firstAttribute="trailing" secondItem="C2a-c8-XIu" secondAttribute="trailing" constant="16" id="ikB-fD-qKf"/>
+                                                    <constraint firstAttribute="bottom" secondItem="C2a-c8-XIu" secondAttribute="bottom" constant="8" id="rNl-TJ-oWe"/>
+                                                    <constraint firstItem="C2a-c8-XIu" firstAttribute="leading" secondItem="efk-ll-T1Y" secondAttribute="leading" constant="16" id="rh6-GA-CMR"/>
                                                 </constraints>
                                             </view>
                                         </subviews>

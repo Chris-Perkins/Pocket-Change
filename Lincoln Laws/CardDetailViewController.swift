@@ -7,6 +7,7 @@
 //
 
 import ClingConstraints
+import CoreLocation
 import UIKit
 import Lottie
 
@@ -156,5 +157,11 @@ public class CardDetailViewController: UIViewController {
                 partySponsorLottieView?.setAnimation(named: "democrat")
             }
         }
+    }
+}
+
+extension CardDetailViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // do something here probably lol.
     }
 }
