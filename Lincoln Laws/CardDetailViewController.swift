@@ -10,6 +10,7 @@ import ClingConstraints
 import CoreLocation
 import UIKit
 import Lottie
+import WSTagsField
 
 public class CardDetailViewController: UIViewController {
     @IBOutlet weak var loadingContainerView: UIView!
@@ -30,6 +31,7 @@ public class CardDetailViewController: UIViewController {
         }
     }
 
+    @IBOutlet weak var tagContainer: UIView!
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = self
@@ -43,12 +45,22 @@ public class CardDetailViewController: UIViewController {
         }
     }
 
+    @IBOutlet weak var tagLabel: UILabel! {
+        didSet {
+            tagLabel.text = billToDisplay?.keywords?.joined(separator: ", ")
+            tagContainer.isHidden = tagLabel.text == nil || tagLabel.text!.isEmpty
+        }
+    }
+
     public var billToDisplay: Bill? {
         didSet {
             guard let bill = billToDisplay else {
                 partySponsorLottieView?.animation = nil
                 return
             }
+            tagLabel?.text = billToDisplay?.keywords?.joined(separator: ", ")
+            tagContainer?.isHidden = tagLabel?.text == nil || tagLabel!.text!.isEmpty
+
             collectionContainer?.isHidden = getBillImageNames().isEmpty
             
             if bill.sponsorParty == .democrat {
@@ -79,7 +91,7 @@ public class CardDetailViewController: UIViewController {
             DispatchQueue.main.async {
                 UIView.animate(withDuration: 0.2, animations: {
                     if (self.billFullText?.preamble ?? "").isEmpty && (self.billFullText?.resolutionBody ?? "").isEmpty {
-                        self.summaryContainer.isHidden = false
+                        self.summaryContainer?.isHidden = false
                     } else {
                         self.descriptionContainer.isHidden = false
                     }

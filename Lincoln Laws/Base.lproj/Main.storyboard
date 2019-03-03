@@ -174,7 +174,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="T2X-BM-bvg">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="815.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="880.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lDP-2p-ZEu" userLabel="card sim view">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="425.5"/>
@@ -275,8 +275,35 @@
                                                     <constraint firstItem="uth-Uj-TgQ" firstAttribute="top" secondItem="7bo-15-Jy5" secondAttribute="top" constant="8" id="wKC-vu-eA1"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MeE-Ib-cdA" userLabel="tag container">
+                                                <rect key="frame" x="0.0" y="537.5" width="375" height="65"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key Topics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0QA-d7-VhR">
+                                                        <rect key="frame" x="8" y="8" width="359" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag1, Tag2, Tag3" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciG-qZ-7l8">
+                                                        <rect key="frame" x="16" y="32.5" width="351" height="24.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="0QA-d7-VhR" firstAttribute="leading" secondItem="MeE-Ib-cdA" secondAttribute="leading" constant="8" id="3n6-m2-VGp"/>
+                                                    <constraint firstItem="0QA-d7-VhR" firstAttribute="top" secondItem="MeE-Ib-cdA" secondAttribute="top" constant="8" id="ZDo-hd-nD7"/>
+                                                    <constraint firstItem="ciG-qZ-7l8" firstAttribute="leading" secondItem="MeE-Ib-cdA" secondAttribute="leading" constant="16" id="dfw-sg-2xy"/>
+                                                    <constraint firstAttribute="trailing" secondItem="0QA-d7-VhR" secondAttribute="trailing" constant="8" id="igN-bR-Xwb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ciG-qZ-7l8" secondAttribute="trailing" constant="8" id="on3-T6-a8x"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ciG-qZ-7l8" secondAttribute="bottom" constant="8" id="t9X-Nb-eqZ"/>
+                                                    <constraint firstItem="ciG-qZ-7l8" firstAttribute="top" secondItem="0QA-d7-VhR" secondAttribute="bottom" constant="4" id="wWa-6U-GFD"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SQk-wv-MMD">
-                                                <rect key="frame" x="0.0" y="537.5" width="375" height="150"/>
+                                                <rect key="frame" x="0.0" y="602.5" width="375" height="150"/>
                                                 <subviews>
                                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="0GM-oG-cfP" customClass="LOTAnimationView">
                                                         <rect key="frame" x="133.5" y="6" width="118" height="118"/>
@@ -298,9 +325,9 @@
                                                 </constraints>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cru-3l-9By" userLabel="description">
-                                                <rect key="frame" x="0.0" y="687.5" width="375" height="77"/>
+                                                <rect key="frame" x="0.0" y="752.5" width="375" height="77"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tol-do-8Ot">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tol-do-8Ot">
                                                         <rect key="frame" x="8" y="8" width="359" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -355,7 +382,7 @@
                                                 </constraints>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNF-vT-rl7" userLabel="summary container">
-                                                <rect key="frame" x="0.0" y="687.5" width="375" height="24"/>
+                                                <rect key="frame" x="0.0" y="752.5" width="375" height="24"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fnm-O3-09w">
                                                         <rect key="frame" x="8" y="8" width="79" height="0.0"/>
@@ -382,7 +409,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efk-ll-T1Y">
-                                                <rect key="frame" x="0.0" y="687.5" width="375" height="128"/>
+                                                <rect key="frame" x="0.0" y="752.5" width="375" height="128"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Want to share your thoughts on this bill?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPZ-81-gfp">
                                                         <rect key="frame" x="8" y="16" width="359" height="61"/>
@@ -504,6 +531,8 @@
                         <outlet property="sponsorLabel" destination="gIg-YH-wLC" id="HKW-fV-XBb"/>
                         <outlet property="stackView" destination="T2X-BM-bvg" id="AuE-hd-kBz"/>
                         <outlet property="summaryContainer" destination="bNF-vT-rl7" id="a7W-zp-b7E"/>
+                        <outlet property="tagContainer" destination="MeE-Ib-cdA" id="oq9-Jr-slx"/>
+                        <outlet property="tagLabel" destination="ciG-qZ-7l8" id="uyu-ip-uZW"/>
                         <outlet property="titleLabel" destination="mTX-PO-vDy" id="1Vx-UU-J3V"/>
                     </connections>
                 </viewController>
