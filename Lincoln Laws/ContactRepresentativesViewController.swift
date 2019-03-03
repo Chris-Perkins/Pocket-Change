@@ -33,7 +33,7 @@ public class ContactRepresentativesViewController: UIViewController {
                         return currResult
                     })
                 }) { (data, response, _) in
-                    print("FAIL")
+                    print("FAIL TO GET MEMBERS")
                 }
             } else {
                 houseMembers = globalHouseMembers
@@ -63,6 +63,7 @@ public class ContactRepresentativesViewController: UIViewController {
         didSet {
             representativesTableView.delegate = self
             representativesTableView.dataSource = self
+            representativesTableView.allowsSelection = false
         }
     }
 
@@ -125,7 +126,7 @@ extension ContactRepresentativesViewController: UITableViewDataSource {
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LMAO") as! RepresentativeCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "representativeCell") as! RepresentativeCell
         cell.nameLabel.text = "\(stateMembers![indexPath.row].firstName) \(stateMembers![indexPath.row].lastName)"
         return cell
     }

@@ -47,8 +47,7 @@ class CardViewController: UIViewController {
             cardCollectionView.dataSource = self
             cardCollectionView.delegate = self
             cardCollectionView.register(Cell.self, forCellWithReuseIdentifier: Cell.description())
-
-            print(":D")
+            
             LincolnLawsServer.shared.getMostRecentBills(successHandler: { (billData) in
                 self.billData = billData
                 DispatchQueue.main.async {
